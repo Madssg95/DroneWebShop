@@ -5,18 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DroneListComponent } from './drone/drone-list/drone-list.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MzButtonModule, MzInputModule} from "ngx-materialize";
+import {MzButtonModule, MzInputModule, MzModalModule, MzParallaxModule} from 'ngx-materialize';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {ReactiveFormsModule} from "@angular/forms";
 import { MzNavbarModule } from 'ngx-materialize';
-import { NavbarComponent } from './shared/navbar/navbar.component'
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { HomeComponent } from './home/home.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DroneListComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component'
     MzInputModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    MzNavbarModule
+    MzNavbarModule,
+    MzParallaxModule,
+    MzModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

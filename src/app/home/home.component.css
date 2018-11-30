@@ -1,0 +1,14 @@
+.roundImg {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px
+}
+
+.roundImg:hover {
+  cursor: pointer;
+}
+
+.inline-block-child {
+  display: inline-block;
+
+}
