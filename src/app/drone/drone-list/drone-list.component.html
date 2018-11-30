@@ -4,7 +4,8 @@
   <div fxLayout="row wrap" *ngIf="drones">
     <div fxFlex="33" *ngFor="let drone of drones">
       <div class="col s12 m4">
-        <div class="card" style="margin: 2%">
+        <a href="#">
+        <div class="card hoverable" style="margin: 2%; color: black">
           <div class="card-image">
             <img src={{drone.imageURL}} style="width:360px;height:240px">
             <span class="card-title">{{drone.model}}</span>
@@ -14,10 +15,8 @@
             <p style="text-align: center; font-size: larger">{{drone.price}}</p>
             <p style="text-align: center; font-size: large">{{drone.details}}</p>
           </div>
-          <div class="card-action">
-            <a href="#">Check out the drone!</a>
-          </div>
         </div>
+        </a>
       </div>
     </div>
   </div>
