@@ -8,12 +8,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MzButtonModule, MzInputModule} from "ngx-materialize";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {ReactiveFormsModule} from "@angular/forms";
+import { MzNavbarModule } from 'ngx-materialize';
+import { NavbarComponent } from './shared/navbar/navbar.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DroneListComponent
+    DroneListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     MzButtonModule,
     MzInputModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MzNavbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
