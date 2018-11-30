@@ -1,0 +1,24 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+  <div fxLayout="row wrap" *ngIf="drones">
+    <div fxFlex="33" *ngFor="let drone of drones">
+      <div class="col s12 m4">
+        <div class="card" style="margin: 2%">
+          <div class="card-image">
+            <img src={{drone.imageURL}} style="width:360px;height:240px">
+            <span class="card-title">{{drone.model}}</span>
+          </div>
+          <div class="card-content" style="width:360px;height: 170px">
+            <p style="text-align: center; font-size: x-large">{{drone.model}}</p>
+            <p style="text-align: center; font-size: larger">{{drone.price}}</p>
+            <p style="text-align: center; font-size: large">{{drone.details}}</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Check out the drone!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
