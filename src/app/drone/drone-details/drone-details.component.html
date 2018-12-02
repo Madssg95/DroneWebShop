@@ -1,0 +1,58 @@
+<section style="background: #f5f7fa">
+<div class="container"
+     style="background: white"
+     fxLayout="column">
+  <div fxLayout="row wrap" *ngIf="drone" fxLayoutGap="10px">
+    <div fxFlex="50">
+      <img src={{drone.imageURL}} style="vertical-align:middle; width: 600px; height: 400px;">
+    </div>
+    <div fxFlex="40">
+    <span>
+        <div class="section" style="text-align: center">
+        <h2>{{drone.manufacturer.name}} {{drone.productName}}</h2>
+          </div>
+      <div class="divider"></div>
+        </span>
+      <span>
+        <div class="section" style="text-align: center">
+          <h5>{{drone.manufacturer.name}}</h5>
+        </div>
+        <div class="divider"></div>
+      </span>
+      <div class="card" style="text-align: center; margin-top: 5%">
+        <div class="card-content black-text" >
+          <span class="card-title" >{{drone.price}} DKK</span>
+          <br>
+            <div class="row m-valign-wrapper">
+              <div class="col-6 offset-3">
+                <mz-input-container
+                  [inline]="true"
+                >
+                  <input mz-input
+                         [label]="'Quantity'"
+                         id="inline-input"
+                         type="number"
+                         min="1"
+                         max="10"
+                         value="1" style="text-align: center">
+                </mz-input-container>
+              </div>
+            </div>
+          </div>
+          <div class="collection" style="margin-top: 5%">
+            <a href="#!" class="collection-item">Add to cart<i class="material-icons">add_shopping_cart</i></a>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div fxLayout="row wrap" *ngIf="drone">
+  <div fxFlex="80">
+    <div class="card" style="margin-top: 5%">
+      <div class="card-content black-text" >
+    <p style="font-size: large">{{drone.details}}</p>
+  </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>

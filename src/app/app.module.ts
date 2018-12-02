@@ -9,14 +9,16 @@ import {MzButtonModule, MzInputModule} from "ngx-materialize";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {ReactiveFormsModule} from "@angular/forms";
 import { MzNavbarModule } from 'ngx-materialize';
-import { NavbarComponent } from './shared/navbar/navbar.component'
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { DroneDetailsComponent } from './drone/drone-details/drone-details.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DroneListComponent,
-    NavbarComponent
+    NavbarComponent,
+    DroneDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component'
     MzInputModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    MzNavbarModule
+    MzNavbarModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

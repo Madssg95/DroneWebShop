@@ -4,7 +4,7 @@
   <div fxLayout="row wrap" *ngIf="drones">
     <div fxFlex="33" *ngFor="let drone of drones">
       <div class="col s12 m4">
-        <a href="#">
+        <a routerLink="/drones/{{drone.id}}">
         <div class="card hoverable" style="margin: 2%; color: black">
           <div class="card-image">
             <img src={{drone.imageURL}}>
@@ -12,8 +12,8 @@
           </div>
           <div class="card-content" style="width:360px;height: 170px">
             <p style="text-align: center; font-size: x-large">{{drone.productName}}</p>
-            <p style="text-align: center; font-size: larger">{{drone.price}}</p>
-            <p style="text-align: center; font-size: large">{{drone.details}}</p>
+            <br>
+            <p style="text-align: center; font-size: larger">DKK {{drone.price}},-</p>
           </div>
         </div>
         </a>
