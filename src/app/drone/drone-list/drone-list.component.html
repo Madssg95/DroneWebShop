@@ -1,5 +1,12 @@
+<div class="dronesite">
+  <div class="sidenav" fxFlex="5">
+    <ul>
+      <li> <a routerLink="/manufacturers/{{manufacturer.id}}" style="font-size: x-large; display: block" *ngFor="let manufacturer of manufacturers">{{manufacturer.name}}</a></li>
+    </ul>
+  </div>
 <div class="container"
      fxLayout="column"
+     fxFlex="80"
      fxLayoutGap="10px">
   <div fxLayout="row wrap" *ngIf="drones">
     <div fxFlex="33" *ngFor="let drone of drones">
@@ -20,4 +27,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

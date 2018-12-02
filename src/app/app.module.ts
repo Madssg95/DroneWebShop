@@ -29,7 +29,7 @@ import { DroneDetailsComponent } from './drone/drone-details/drone-details.compo
     MzInputModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    MzNavbarModule,
+    MzNavbarModule
 
   ],
   providers: [],
