@@ -10,7 +10,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {ReactiveFormsModule} from "@angular/forms";
 import { MzNavbarModule } from 'ngx-materialize';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { DroneDetailsComponent } from './drone/drone-details/drone-details.component'
+import { DroneDetailsComponent } from './drone/drone-details/drone-details.component';
+import { ManufacturerDetailsComponent } from './manufacturer/manufacturer-details/manufacturer-details.component'
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DroneDetailsComponent } from './drone/drone-details/drone-details.compo
     AppComponent,
     DroneListComponent,
     NavbarComponent,
-    DroneDetailsComponent
+    DroneDetailsComponent,
+    ManufacturerDetailsComponent
   ],
   imports: [
     BrowserModule,
