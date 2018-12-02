@@ -34,8 +34,20 @@
   margin-left: 35%;
   font-family: "Allerta Stencil", Sans-serif, serif;
   font-weight: bolder;
-
-
+}
+#parallaxProduktside {
+  position: absolute;
+  z-index: 1000;
+  margin-top: 120px;
+  margin-left: 33%;
+  font-family: "Allerta Stencil", Sans-serif, serif;
+  font-weight: bolder;
+}
+#parallaxProduktsideButton {
+  position: absolute;
+  z-index: 1000;
+  margin-top: 250px;
+  margin-left: -50px;
 }
 .fa {
   padding: 20px;
