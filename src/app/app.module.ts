@@ -8,12 +8,16 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MzButtonModule, MzInputModule} from "ngx-materialize";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {ReactiveFormsModule} from "@angular/forms";
+import { AccessDeniedComponent } from './shared/access-denied/access-denied.component';
+import { LoginComponent } from './auth/login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DroneListComponent
+    DroneListComponent,
+    AccessDeniedComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
