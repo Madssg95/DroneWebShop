@@ -4,12 +4,18 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DroneListComponent } from './drone/drone-list/drone-list.component';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MzButtonModule, MzInputModule} from "ngx-materialize";
-import {FlexLayoutModule} from "@angular/flex-layout";
-import {ReactiveFormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MzButtonModule, MzInputModule} from 'ngx-materialize';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {ReactiveFormsModule} from '@angular/forms';
 import { AccessDeniedComponent } from './shared/access-denied/access-denied.component';
 import { LoginComponent } from './auth/login/login.component';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {TokenService} from './shared/services/token.service';
+import {LoginService} from './shared/services/login.service';
+import {AuthGuard} from './auth/guards/auth.guard';
+import {AdminGuard} from './auth/guards/admin.guard';
+
 
 
 @NgModule({
@@ -29,7 +35,10 @@ import { LoginComponent } from './auth/login/login.component';
     FlexLayoutModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [TokenService,
+    LoginService,
+    AuthGuard,
+    AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

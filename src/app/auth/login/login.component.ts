@@ -2,6 +2,7 @@ import {Component, HostBinding, OnInit} from '@angular/core';
 import {LoginService} from '../../shared/services/login.service';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
+import {User} from '../../shared/model/user';
 
 @Component({
   selector: 'app-login',
