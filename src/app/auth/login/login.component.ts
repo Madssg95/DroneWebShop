@@ -3,6 +3,7 @@ import {LoginService} from '../../shared/services/login.service';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 import {User} from '../../shared/model/user';
+import {nextContext} from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-login',
@@ -11,30 +12,22 @@ import {User} from '../../shared/model/user';
 })
 export class LoginComponent implements OnInit {
   @HostBinding('style.height') height: string;
-
-  loginGroup: FormGroup;
+  model: any = {};
+ loginform = new FormGroup({userName: new FormControl(), password: new FormControl()})
   constructor(private auth: LoginService,
               private router: Router) {
     this.height = '100%';
-    this.loginGroup = new FormGroup({
-      username: new FormControl(),
-      password: new FormControl(),
-      remember: new FormControl()
-    });
+
+
   }
 
   ngOnInit() {
   }
 
   login() {
-    this.auth.login(this.loginGroup.value).subscribe(token => {
-      if (token) {
-        this.router
-          .navigateByUrl('/');
-      } else {
-
-      }
-    });
+   const loginInfo = this.loginform.value;
+   this.auth.login(loginInfo).subscribe(next => {console.log('sucess'); }
+   );
   }
 
 }

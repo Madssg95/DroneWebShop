@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DroneListComponent } from './drone/drone-list/drone-list.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MzButtonModule, MzInputModule} from 'ngx-materialize';
+import {MzButtonModule, MzCardModule, MzInputModule} from 'ngx-materialize';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ReactiveFormsModule} from '@angular/forms';
 import { AccessDeniedComponent } from './shared/access-denied/access-denied.component';
@@ -33,7 +33,9 @@ import {AdminGuard} from './auth/guards/admin.guard';
     MzButtonModule,
     MzInputModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MzCardModule,
+
   ],
   providers: [TokenService,
     LoginService,

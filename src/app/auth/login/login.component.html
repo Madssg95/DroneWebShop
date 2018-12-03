@@ -1,7 +1,17 @@
+<Form [formGroup]="loginform">
+  <mz-input-container>
+    <input id="userName" mz-input="" placeholder="Brugernavn" name="userName" formControlName="userName"type="text">
+  </mz-input-container>
+  <mz-input-container>
+    <input id="password" mz-input="" placeholder="Kodeord" name="password" formControlName="password" type="text">
+  </mz-input-container>
 
-<input _ngcontent-c8="" id="userName" mz-input="" placeholder="Brugernavn" type="text" class="ng-tns-c8-0">
-<input _ngcontent-c8="" id="password" mz-input="" placeholder="Kodeord" type="text" class="ng-tns-c8-0">
 
-<button _ngcontent-c13="" class="ng-tns-c13-1 btn waves-effect waves-light" mz-button="">
-  Login
-</button>
+  <button _ngcontent-c13="" class="ng-tns-c13-1 btn waves-effect waves-light" (click)="login()" mz-button="">
+    Login
+  </button>
+
+
+
+
+</Form>
