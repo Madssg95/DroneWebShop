@@ -13,7 +13,8 @@ import {nextContext} from '@angular/core/src/render3';
 export class LoginComponent implements OnInit {
   @HostBinding('style.height') height: string;
   model: any = {};
- loginform = new FormGroup({userName: new FormControl(), password: new FormControl()})
+  loginform = new FormGroup({userName: new FormControl(), password: new FormControl()})
+
   constructor(private auth: LoginService,
               private router: Router) {
     this.height = '100%';
@@ -30,6 +31,8 @@ export class LoginComponent implements OnInit {
         this.router
           .navigateByUrl('/');
       } else {
-       this.router.navigateByUrl('/denied');
+        this.router.navigateByUrl('/denied');
       }
+    });
+  }
 }

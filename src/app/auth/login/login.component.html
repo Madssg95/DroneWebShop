@@ -1,18 +1,25 @@
 <Form [formGroup]="loginform">
-  <mz-input-container>
-    <input id="userName" mz-input="" placeholder="Brugernavn" name="userName" formControlName="userName"type="text">
-  </mz-input-container>
-  <mz-input-container>
-    <input id="password" mz-input="" placeholder="Kodeord" name="password" formControlName="password" type="text">
-  </mz-input-container>
 
-
-  <button _ngcontent-c13="" class="ng-tns-c13-1 btn waves-effect waves-light" (click)="login()" mz-button="">
-    Login
-  </button>
-
-
-
+  <div class="login">
+  <div class="col s4">
+    <mz-card style="width: 500px; text-align: center">
+      <mz-card-title >
+        Login
+      </mz-card-title>
+      <mz-card-content>
+        <mz-input-container>
+          <input id="userName" mz-input="" placeholder="Brugernavn" name="userName" formControlName="userName"type="text">
+        </mz-input-container>
+        <mz-input-container>
+          <input id="password" mz-input="" placeholder="Kodeord" name="password" formControlName="password" type="password">
+        </mz-input-container>
+      </mz-card-content>
+      <mz-card-action>
+        <button _ngcontent-c13="" class="ng-tns-c13-1 btn waves-effect waves-light grey darken-2" (click)="login()" mz-button="">Login</button>
+      </mz-card-action>
+    </mz-card>
+  </div>
+  </div>
 
 
 
