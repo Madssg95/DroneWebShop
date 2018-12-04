@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DroneListComponent } from './drone/drone-list/drone-list.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MzButtonModule, MzCardModule, MzInputModule} from 'ngx-materialize';
+import {MzButtonModule, MzCardModule, MzCollapsibleModule, MzInputModule, MzModalModule, MzParallaxModule} from 'ngx-materialize';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ReactiveFormsModule} from '@angular/forms';
 import { AccessDeniedComponent } from './shared/access-denied/access-denied.component';
@@ -18,7 +18,8 @@ import {AdminGuard} from './auth/guards/admin.guard';
 import { MzNavbarModule } from 'ngx-materialize';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { DroneDetailsComponent } from './drone/drone-details/drone-details.component';
-import { ManufacturerDetailsComponent } from './manufacturer/manufacturer-details/manufacturer-details.component'
+import { ManufacturerDetailsComponent } from './manufacturer/manufacturer-details/manufacturer-details.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -30,9 +31,10 @@ import { ManufacturerDetailsComponent } from './manufacturer/manufacturer-detail
     LoginComponent,
     NavbarComponent,
     DroneDetailsComponent,
-    ManufacturerDetailsComponent
+    ManufacturerDetailsComponent,
+    HomeComponent
 
-  ],
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,8 +45,11 @@ import { ManufacturerDetailsComponent } from './manufacturer/manufacturer-detail
     FlexLayoutModule,
     ReactiveFormsModule,
     MzCardModule,
-    MzNavbarModule
-
+    MzNavbarModule,
+    MzParallaxModule,
+    MzModalModule,
+    MzCardModule,
+    MzCollapsibleModule
 
   ],
   providers: [TokenService,

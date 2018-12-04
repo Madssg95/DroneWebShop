@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   login() {
    const loginInfo = this.loginform.value;
-   this.auth.login(loginInfo).subscribe(next => {console.log('sucess'); }
+   this.auth.login(loginInfo).subscribe(next => {console.log('success'); }
    );
   }
 
