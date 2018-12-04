@@ -25,9 +25,11 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-   const loginInfo = this.loginform.value;
-   this.auth.login(loginInfo).subscribe(next => {console.log('success'); }
-   );
-  }
-
+    this.auth.login(this.loginform.value).subscribe(token => {
+      if (token) {
+        this.router
+          .navigateByUrl('/');
+      } else {
+       this.router.navigateByUrl('/denied');
+      }
 }

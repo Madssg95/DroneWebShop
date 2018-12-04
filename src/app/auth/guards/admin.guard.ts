@@ -18,7 +18,7 @@ export class AdminGuard implements CanActivate {
           return true;
         } else {
           // not logged in with right role so redirect to login page with the return url
-          this.router.navigateByUrl('/denied');
+          this.router.navigateByUrl('denied');
           return false;
         }
       })

@@ -5,7 +5,7 @@ import {User} from '../model/user';
 import {TokenService} from './token.service';
 import {Observable} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
-const url = environment.apiUrl + '/Account';
+const url = environment.apiUrl;
 
 @Injectable()
 export class LoginService {
@@ -14,7 +14,7 @@ export class LoginService {
               private tokenService: TokenService) { }
 
   public login(user: User): Observable<string> {
-    return this.http.post<string>(url + '/login', user, {responseType: 'text' as 'json'})
+    return this.http.post<string>(url + 'login', user, {responseType: 'text' as 'json'})
       .pipe(
         switchMap(token => Observable.create(obs => {
             this.tokenService.setToken(token);
