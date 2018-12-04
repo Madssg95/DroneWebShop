@@ -1,24 +1,34 @@
+<div class="dronesite">
+  <div class="sidenav" fxFlex="15">
+    <ul class="collection">
+      <li class="collection-header"><h4>Modeller</h4></li>
+    <ul class="collection"*ngFor="let manufacturer of manufacturers">
+      <a class="collection-item" routerLink="/manufacturers/{{manufacturer.id}}" style="font-size: x-large; display: block" >{{manufacturer.name}}<i class="material-icons" style="float: right">send</i></a>
+    </ul>
+    </ul>
+  </div>
 <div class="container"
      fxLayout="column"
+     fxFlex="80"
      fxLayoutGap="10px">
   <div fxLayout="row wrap" *ngIf="drones">
     <div fxFlex="33" *ngFor="let drone of drones">
       <div class="col s12 m4">
-        <div class="card" style="margin: 2%">
+        <a routerLink="/drones/{{drone.id}}">
+        <div class="card hoverable" style="margin: 2%; color: black">
           <div class="card-image">
-            <img src={{drone.imageURL}} style="width:360px;height:240px">
+            <img src={{drone.imageURL}}>
             <span class="card-title">{{drone.model}}</span>
           </div>
           <div class="card-content" style="width:360px;height: 170px">
-            <p style="text-align: center; font-size: x-large">{{drone.model}}</p>
-            <p style="text-align: center; font-size: larger">{{drone.price}}</p>
-            <p style="text-align: center; font-size: large">{{drone.details}}</p>
-          </div>
-          <div class="card-action">
-            <a href="#">Check out the drone!</a>
+            <p style="text-align: center; font-size: x-large">{{drone.productName}}</p>
+            <br>
+            <p style="text-align: center; font-size: larger">DKK {{drone.price}},-</p>
           </div>
         </div>
+        </a>
       </div>
     </div>
   </div>
+</div>
 </div>
