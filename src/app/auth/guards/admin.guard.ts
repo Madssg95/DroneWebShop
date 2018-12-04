@@ -14,7 +14,7 @@ export class AdminGuard implements CanActivate {
     pipe(
       first(),
       map(user => {
-        if (user && user.role === 'Administrator') {
+        if (user.userName && user.password !== null) {
           return true;
         } else {
           // not logged in with right role so redirect to login page with the return url
