@@ -5,6 +5,7 @@ import {DroneDetailsComponent} from "./drone/drone-details/drone-details.compone
 import {ManufacturerDetailsComponent} from "./manufacturer/manufacturer-details/manufacturer-details.component";
 import {HomeComponent} from './home/home.component';
 import {CustomerDetailsComponent} from "./customer/customer-details/customer-details.component";
+import {CustomerListComponent} from "./customer/customer-list/customer-list.component";
 
 const routes: Routes = [
   { path: 'drones', component: DroneListComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'manufacturers/:id', component: ManufacturerDetailsComponent},
   { path: 'drones', component: DroneListComponent},
   { path: '', component: HomeComponent},
-  { path: 'customers/:id', component: CustomerDetailsComponent}
+  { path: 'customers/:id', component: CustomerDetailsComponent},
+  { path: 'customers', component: CustomerListComponent}
 ];
 
 @NgModule({

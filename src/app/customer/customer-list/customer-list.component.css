@@ -1,0 +1,15 @@
+.buttonsRead{
+  width: 100%;
+  margin-top: 2%;
+  text-align: right;
+}
+
+button{
+  margin-right: 5%;
+}
+
+.buttonsUpdate {
+  width: 100%;
+  margin-top: 2%;
+  text-align: right;
+}

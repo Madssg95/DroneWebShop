@@ -1,0 +1,84 @@
+<div class="container"
+     fxLayout="column"
+     fxFlex="50"
+     fxLayoutGap="30px">
+  <div fxLayout="row wrap" *ngIf="customers">
+
+
+    <mz-collapsible fxFlex="100" fxLayoutAlign="center center" fxFill="100">
+      <mz-collapsible-item *ngFor="let customer of customers">
+        <mz-collapsible-item-header style="font-size: large">Customer Id: {{customer.id}} - Customer Name: {{customer.firstName}} {{customer.lastName}}</mz-collapsible-item-header>
+        <mz-collapsible-item-body>
+          <form [formGroup]="customerForm" (ngSubmit)="update()">
+          <table class="striped">
+            <tbody *ngIf="!isUpdate">
+            <tr>
+              <td>Id</td>
+              <td>{{customer.id}}</td>
+            </tr>
+            <tr>
+              <td>Firstname</td>
+              <td>{{customer.firstName}}</td>
+            </tr>
+            <tr>
+              <td>Lastname</td>
+              <td>{{customer.lastName}}</td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td>{{customer.address}}</td>
+            </tr>
+            <tr>
+              <td>Phonenumber</td>
+              <td>{{customer.phoneNumber}}</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>{{customer.email}}</td>
+            </tr>
+            </tbody>
+            <tbody *ngIf="isUpdate">
+            <tr>
+              <td>Id</td>
+              <td><input type="text" formControlName="id" value="{{customer.id}}" ></td>
+            </tr>
+            <tr>
+              <td>Firstname</td>
+              <td><input type="text" formControlName="firstName" value="{{customer.firstName}}"></td>
+            </tr>
+            <tr>
+              <td>Lastname</td>
+              <td><input type="text" formControlName="lastName" value="{{customer.lastName}}"></td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td><input type="text" formControlName="address" value="{{customer.address}}"></td>
+            </tr>
+            <tr>
+              <td>Phonenumber</td>
+              <td><input type="number" formControlName="phoneNumber" value="{{customer.phoneNumber}}"></td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td><input type="text" formControlName="email" value="{{customer.email}}"></td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="buttonsRead" *ngIf="!isUpdate">
+          <button *ngIf="!isUpdate" mz-button [float]="true" class="red"><i class="material-icons">delete</i></button>
+          <span class="right">
+            <button *ngIf="!isUpdate" (click)="setUpdate(customer)" mz-button [float]="true" class="blue"><i class="material-icons" style="margin-left: 2px">edit</i></button>
+          </span>
+          </div>
+          <div class="buttonsUpdate" *ngIf="isUpdate">
+            <button *ngIf="isUpdate" (click)="resetUpdate()" mz-button [float]="true" class="red"><i class="material-icons">cancel</i></button>
+            <span class="right">
+            <button *ngIf="isUpdate" type="submit" mz-button [float]="true" class="green"><i class="material-icons" style="margin-left: 2px">check</i></button>
+          </span>
+          </div>
+        </form>
+        </mz-collapsible-item-body>
+      </mz-collapsible-item>
+    </mz-collapsible>
+  </div>
+</div>
