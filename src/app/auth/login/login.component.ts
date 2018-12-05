@@ -13,6 +13,8 @@ import {nextContext} from '@angular/core/src/render3';
 export class LoginComponent implements OnInit {
   @HostBinding('style.height') height: string;
   model: any = {};
+  loginProcess: boolean;
+  loginError: string;
   loginform = new FormGroup({userName: new FormControl(), password: new FormControl()})
 
   constructor(private auth: LoginService,
@@ -26,12 +28,14 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.loginProcess = true;
     this.auth.login(this.loginform.value).subscribe(token => {
       if (token) {
-        this.router
-          .navigateByUrl('/');
+        this.loginProcess = false;
+        this.router.navigateByUrl('/');
       } else {
         this.router.navigateByUrl('/denied');
+        this.loginProcess = false;
       }
     });
   }

@@ -1,10 +1,12 @@
 <Form [formGroup]="loginform">
 
-  <div class="login">
+  <div class="login" *ngIf="!loginProcess">
   <div class="col s4">
     <mz-card style="width: 500px; text-align: center">
       <mz-card-title >
         Login
+
+        <div class="error message"></div>
       </mz-card-title>
       <mz-card-content>
         <mz-input-container>
@@ -19,6 +21,10 @@
       </mz-card-action>
     </mz-card>
   </div>
+  </div>
+
+  <div class="spinner" style="text-align: center;" *ngIf="loginProcess">
+    <mz-spinner color="green"></mz-spinner>
   </div>
 
 

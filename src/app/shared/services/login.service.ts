@@ -14,14 +14,16 @@ export class LoginService {
               private tokenService: TokenService) { }
 
   public login(user: User): Observable<string> {
-    return this.http.post<string>(url + 'users', user, {responseType: 'text' as 'json'})
+    return this.http.post<string>(url + '/Token', user , {responseType: 'text' as 'json'})
       .pipe(
-        switchMap(token => Observable.create(obs => {
-            this.tokenService.setToken(token);
-            obs.next(token);
+        switchMap(token => Observable.create(obs => {this.tokenService.setToken(token);
+        obs.next(token);
           })
         )
       );
+
+
+
   }
 
   public logout(): Observable<boolean> {

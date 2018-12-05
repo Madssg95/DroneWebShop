@@ -5,7 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DroneListComponent } from './drone/drone-list/drone-list.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MzButtonModule, MzCardModule, MzCollapsibleModule, MzInputModule, MzModalModule, MzParallaxModule} from 'ngx-materialize';
+import {
+  MzButtonModule,
+  MzCardModule,
+  MzCollapsibleModule,
+  MzInputModule,
+  MzModalModule,
+  MzParallaxModule,
+  MzSpinnerModule
+} from 'ngx-materialize';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ReactiveFormsModule} from '@angular/forms';
 import { AccessDeniedComponent } from './shared/access-denied/access-denied.component';
@@ -49,7 +57,8 @@ import { HomeComponent } from './home/home.component';
     MzParallaxModule,
     MzModalModule,
     MzCardModule,
-    MzCollapsibleModule
+    MzCollapsibleModule,
+    MzSpinnerModule
 
   ],
   providers: [TokenService,
