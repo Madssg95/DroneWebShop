@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { DroneListComponent } from './drone/drone-list/drone-list.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MzButtonModule, MzCardModule, MzCollapsibleModule, MzInputModule, MzModalModule, MzParallaxModule} from 'ngx-materialize';
-import {FlexLayoutModule} from "@angular/flex-layout";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {ReactiveFormsModule} from '@angular/forms';
 import { MzNavbarModule } from 'ngx-materialize';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { DroneDetailsComponent } from './drone/drone-details/drone-details.component';
 import { ManufacturerDetailsComponent } from './manufacturer/manufacturer-details/manufacturer-details.component'
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+
+
 
 
 @NgModule({
@@ -22,7 +24,7 @@ import { HomeComponent } from './home/home.component'
     NavbarComponent,
     DroneDetailsComponent,
     ManufacturerDetailsComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

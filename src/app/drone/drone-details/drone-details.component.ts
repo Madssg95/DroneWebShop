@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {DroneService} from "../../shared/services/drone.service";
-import {Drone} from "../../shared/model/drone";
+import {ActivatedRoute} from '@angular/router';
+import {DroneService} from '../../shared/services/drone.service';
+import {Drone} from '../../shared/model/drone';
 
 @Component({
   selector: 'app-drone-details',

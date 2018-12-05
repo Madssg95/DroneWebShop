@@ -5,14 +5,14 @@ import {DroneDetailsComponent} from "./drone/drone-details/drone-details.compone
 import {ManufacturerDetailsComponent} from "./manufacturer/manufacturer-details/manufacturer-details.component";
 import {HomeComponent} from './home/home.component';
 
-const routes: Routes = [
-  { path: 'drones', component: DroneListComponent},
-  { path: 'drones/:id', component: DroneDetailsComponent},
-  { path: 'manufacturers/:id', component: ManufacturerDetailsComponent}
+
 
 const routes: Routes = [
   { path: 'drones', component: DroneListComponent},
-  { path: '', component: HomeComponent}
+  { path: '', component: HomeComponent},
+  { path: 'drones/:id', component: DroneDetailsComponent},
+  { path: 'manufacturers/:id', component: ManufacturerDetailsComponent},
+
 ];
 
 @NgModule({
