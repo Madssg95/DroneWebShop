@@ -2,9 +2,9 @@
 
   <div class="login" *ngIf="!loginProcess">
   <div class="col s4">
-    <mz-card style="width: 500px; text-align: center">
-      <mz-card-title >
-        Login
+    <mz-card [hoverable]="true" style="width: 500px; text-align: center">
+      <mz-card-title style="text-align: center" >
+        <p *ngIf="loginError" style="color: red; font-size: small" >{{loginError}}</p>
 
         <div class="error message"></div>
       </mz-card-title>

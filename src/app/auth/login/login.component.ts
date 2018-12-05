@@ -33,10 +33,15 @@ export class LoginComponent implements OnInit {
       if (token) {
         this.loginProcess = false;
         this.router.navigateByUrl('/');
-      } else {
+      } else{
         this.router.navigateByUrl('/denied');
         this.loginProcess = false;
       }
-    });
+    },
+      error => {
+      this.loginError = 'Brugernavn og eller password er forkert';
+      this.loginProcess = false;
+      console.log(this.loginError);
+      });
   }
 }

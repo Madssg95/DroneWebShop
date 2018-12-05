@@ -4,11 +4,11 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DroneListComponent } from './drone/drone-list/drone-list.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MzButtonModule,
   MzCardModule,
-  MzCollapsibleModule,
+  MzCollapsibleModule, MzDropdownModule,
   MzInputModule,
   MzModalModule,
   MzParallaxModule,
@@ -48,6 +48,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NoopAnimationsModule,
     MzButtonModule,
     MzInputModule,
     FlexLayoutModule,
@@ -58,7 +59,8 @@ import { HomeComponent } from './home/home.component';
     MzModalModule,
     MzCardModule,
     MzCollapsibleModule,
-    MzSpinnerModule
+    MzSpinnerModule,
+    MzDropdownModule
 
   ],
   providers: [TokenService,
