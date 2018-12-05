@@ -1,0 +1,32 @@
+<section style="background: #f5f7fa">
+  <div class="container"
+       style="background: white"
+       fxLayout="column">
+    <div fxLayout="row wrap" *ngIf="customer" fxLayoutGap="10px">
+      <div fxFlex="100">
+    <span>
+        <div class="section" style="text-align: center">
+        <h3>{{customer.firstName}}</h3>
+          </div>
+      <div class="divider"></div>
+      <div class="section" style="text-align: center">
+        <h3>{{customer.lastName}}</h3>
+          </div>
+      <div class="divider"></div>
+      <div class="section" style="text-align: center">
+        <h3>{{customer.address}}</h3>
+          </div>
+      <div class="divider"></div>
+      <div class="section" style="text-align: center">
+        <h3>{{customer.phoneNumber}}</h3>
+          </div>
+      <div class="divider"></div>
+      <div class="section" style="text-align: center">
+        <h3>{{customer.email}}</h3>
+          </div>
+      <div class="divider"></div>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

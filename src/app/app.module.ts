@@ -12,7 +12,8 @@ import { MzNavbarModule } from 'ngx-materialize';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { DroneDetailsComponent } from './drone/drone-details/drone-details.component';
 import { ManufacturerDetailsComponent } from './manufacturer/manufacturer-details/manufacturer-details.component'
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component'
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HomeComponent } from './home/home.component'
     NavbarComponent,
     DroneDetailsComponent,
     ManufacturerDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    CustomerDetailsComponent
   ],
   imports: [
     BrowserModule,

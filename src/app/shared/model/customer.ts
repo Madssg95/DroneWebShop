@@ -3,6 +3,6 @@ export class Customer {
   firstName: string;
   lastName: string;
   address: string;
-  phoneNUmber: number;
+  phoneNumber: number;
   email: string;
 }
