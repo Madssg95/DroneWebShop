@@ -28,7 +28,12 @@ export class CustomerListComponent implements OnInit {
 
 
   ngOnInit() {
+    this.refresh();
+  }
+
+  refresh() {
     this.customerService.getCustomers().subscribe(customers => this.customers = customers);
+    this.isUpdate = false;
   }
 
   setUpdate(customerUpdate: Customer){
@@ -53,6 +58,13 @@ export class CustomerListComponent implements OnInit {
       .subscribe(() => {
         this.router.navigateByUrl('/customers');
       });
+    this.refresh();
   }
+
+  delete(id: number) {
+    this.customerService.deleteCustomer(id).subscribe(() => {
+    this.refresh();
+  });
+}
 
 }
