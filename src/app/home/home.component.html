@@ -40,22 +40,22 @@
       <div style="margin-top: 100px; text-align: center">
 
         <div class="child inline-block-child">
-          <img class="roundImg"  src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/HmECn919Wj7bdv0p6/videoblocks-aerial-view-of-the-flight-with-the-drone-over-an-uninhabited-house-with-destroyed-roof-and-many-missing-roof-tiles-lost-place_rvl8s74zz_thumbnail-full01.png">
+          <img href="javascript:void(0)" (click)="bygninger.openModal()"  class="roundImg"  src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/HmECn919Wj7bdv0p6/videoblocks-aerial-view-of-the-flight-with-the-drone-over-an-uninhabited-house-with-destroyed-roof-and-many-missing-roof-tiles-lost-place_rvl8s74zz_thumbnail-full01.png">
           <h4>Bygninger</h4>
         </div>
 
         <div class="child inline-block-child" style="margin-left: 4%">
-          <img class="roundImg"  src="https://westernmassdrones.com/images/Drone%20Event%20Photography%20and%20Video.jpg" >
+          <img href="javascript:void(0)" (click)="events.openModal()" class="roundImg"  src="https://westernmassdrones.com/images/Drone%20Event%20Photography%20and%20Video.jpg" >
           <h4>Events</h4>
         </div>
 
         <div class="child inline-block-child" style="margin-left: 4%">
-          <img class="roundImg"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Simested_%C3%85.jpg/1200px-Simested_%C3%85.jpg" >
+          <img href="javascript:void(0)" (click)="natur.openModal()" class="roundImg"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Simested_%C3%85.jpg/1200px-Simested_%C3%85.jpg" >
           <h4>Natur</h4>
         </div>
 
         <div class="child inline-block-child" style="margin-left: 4%">
-          <img class="roundImg"  src="https://i.ytimg.com/vi/mTGtIbhjbWA/maxresdefault.jpg" >
+          <img href="javascript:void(0)" (click)="foreninger.openModal()" class="roundImg"  src="https://i.ytimg.com/vi/mTGtIbhjbWA/maxresdefault.jpg" >
           <h4>Foreninger</h4>
         </div>
 
@@ -80,7 +80,7 @@
     <h3 style="margin-top: 5%">Følg os</h3>
 
       <span>
-      <a href="#" class="fa fa-facebook"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/groups/1830578060509692/?fref=nf" class="fa fa-facebook"></a>
       <a href="#" class="fa fa-twitter" style="margin-left: 1%"></a>
       <a href="#" class="fa fa-instagram" style="margin-left: 1%"></a>
       <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCkqwJA_xdZAhlZeGFPNs1Tw/featured" class="fa fa-youtube" style="margin-left: 1%"></a>
@@ -90,6 +90,9 @@
   </div>
 
 </div>
+
+
+
 
 
 
@@ -164,5 +167,96 @@
 </mz-modal>
 
 
+
+
+
+
+<mz-modal #bygninger>
+  <mz-modal-content>
+    <div style="text-align: center; margin-top: 5%">
+      <h5 style="margin-bottom: 5%">Bygninger</h5>
+      <h6> Amargergaard med Troldhede Kirke i baggrunden</h6>
+      <img src="http://www.wefly4you.dk/wp-content/uploads/2016/08/Amargergaard-0023-1024x769-1024x769.jpg" width="500" height="500">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h6> Troldhede Kirke</h6>
+        <img src="http://www.wefly4you.dk/wp-content/uploads/2016/08/Troldhede-kirke-1-0006-948x1024.jpg" width="500" height="500">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h6>Inspektion af tagryg</h6>
+      <iframe width="500" height="500" src="https://www.youtube.com/embed/r7K1QpMZGqk"
+              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    </div>
+
+  </mz-modal-content>
+</mz-modal>
+
+
+
+
+
+<mz-modal #events>
+  <mz-modal-content>
+    <div style="text-align: center; margin-top: 5%">
+      <h5 style="margin-bottom: 5%">Events</h5>
+      <h6> Kræmmermarked i Troldhede</h6>
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/w-XB8N4gizA" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </div>
+
+  </mz-modal-content>
+</mz-modal>
+
+
+
+
+
+<mz-modal #natur>
+  <mz-modal-content>
+    <div style="text-align: center; margin-top: 5%">
+      <h5 style="margin-bottom: 5%">Natur</h5>
+      <h6> Åforløb vest for Troldhede</h6>
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/AtlXmQyYx9Q" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h6>Troldhede Høst</h6>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/gQxZ0nzXkow" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </div>
+
+  </mz-modal-content>
+</mz-modal>
+
+
+
+<mz-modal #foreninger>
+  <mz-modal-content>
+    <div style="text-align: center; margin-top: 5%">
+      <h5 style="margin-bottom: 5%">Foreniger</h5>
+      <h6> AASKOV GOLFKLUB – FØRSTE TESTOPTAGELSE</h6>
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/qHQREh2Pi_s" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </div>
+
+  </mz-modal-content>
+</mz-modal>
 
 
