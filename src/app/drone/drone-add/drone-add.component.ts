@@ -18,14 +18,12 @@ export class DroneAddComponent implements OnInit {
     price: new FormControl(''),
     details: new FormControl(''),
     imageURL: new FormControl(''),
-    manufacturer: new FormControl(''),
-    name: new FormControl('')
+    manufacturer: new FormControl('')
   });
 
   isNewManufacturer= false;
 
   manufacturers: Manufacturer[];
-  newManufacturer: Manufacturer;
 
   constructor(private droneService: DroneService, private router: Router, private manufacturerService: ManufacturerService) { }
 
@@ -38,28 +36,15 @@ export class DroneAddComponent implements OnInit {
   }
 
   create(){
-   let manufacturerNew: Manufacturer;
     debugger;
     const droneFormFields = this.droneForm.value;
-    if (this.isNewManufacturer == true) {
-     const manufacturer = {
-        name: droneFormFields.name
-      }
-      this.manufacturerService.createManufacturer(manufacturer as Manufacturer).subscribe(manufacturer => {manufacturerNew = manufacturer});
-     debugger;
-    }
-
     const drone = {
       productName: droneFormFields.productName,
       price: droneFormFields.price,
       details: droneFormFields.details,
       imageURL: droneFormFields.imageURL,
-      manufacturer: {id: droneFormFields.manufacturer},
+      manufacturer: {name: droneFormFields.manufacturer},
     };
-    debugger;
-    if (drone.manufacturer.id == "") {
-      drone.manufacturer.id = manufacturerNew.id;
-    }
 
     this.droneService.createDrone(drone as Drone).subscribe(() => {
       this.router.navigateByUrl('/drones');
