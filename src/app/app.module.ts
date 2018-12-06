@@ -13,7 +13,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { DroneDetailsComponent } from './drone/drone-details/drone-details.component';
 import { ManufacturerDetailsComponent } from './manufacturer/manufacturer-details/manufacturer-details.component'
 import { HomeComponent } from './home/home.component';
-import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component'
+import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
+import { CustomerListComponent } from './customer/customer-list/customer-list.component'
 
 
 
@@ -28,8 +29,8 @@ import { CustomerDetailsComponent } from './customer/customer-details/customer-d
     DroneDetailsComponent,
     ManufacturerDetailsComponent,
     HomeComponent,
-    CustomerDetailsComponent
-
+    CustomerDetailsComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
