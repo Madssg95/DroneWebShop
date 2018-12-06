@@ -31,5 +31,9 @@ export class DroneService {
   deleteDrone(id: number): Observable<any> {
     return this.http.delete(environment.apiUrl + 'drones/' + id);
   }
+
+  createDrone(drone: Drone): Observable<Drone> {
+    return this.http.post<Drone>(environment.apiUrl + 'drones', drone);
+  }
 }
 

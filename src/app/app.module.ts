@@ -31,7 +31,8 @@ import {TokenService} from './shared/services/token.service';
 import {LoginService} from './shared/services/login.service';
 import {AuthGuard} from './auth/guards/auth.guard';
 import {AdminGuard} from './auth/guards/admin.guard';
-import { DroneListAdminComponent } from './drone/drone-list-admin/drone-list-admin.component'
+import { DroneListAdminComponent } from './drone/drone-list-admin/drone-list-admin.component';
+import { DroneAddComponent } from './drone/drone-add/drone-add.component';
 
 
 
@@ -47,7 +48,8 @@ import { DroneListAdminComponent } from './drone/drone-list-admin/drone-list-adm
     HomeComponent,
     CustomerDetailsComponent,
     CustomerListComponent,
-    DroneListAdminComponent
+    DroneListAdminComponent,
+    DroneAddComponent
   ],
 
   imports: [

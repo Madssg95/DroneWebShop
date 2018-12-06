@@ -17,10 +17,12 @@ export class DroneDetailsComponent implements OnInit {
               private toastService: MzToastService) { }
 
   ngOnInit() {
+    debugger;
     const id = +this.route.snapshot.paramMap.get('id');
     this.droneService.getDroneById(id).subscribe(singleDrone => {
       this.drone = singleDrone;
     });
+    debugger;
   }
 
   showToast() {

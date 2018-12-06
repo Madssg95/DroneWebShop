@@ -19,4 +19,8 @@ export class ManufacturerService {
     return this.http.get<Manufacturer>(environment.apiUrl + 'manufacturers/' + id);
   }
 
+  createManufacturer(manufacturer: Manufacturer): Observable<Manufacturer> {
+    return this.http.post<Manufacturer>(environment.apiUrl + 'manufacturers/', manufacturer);
+  }
+
 }

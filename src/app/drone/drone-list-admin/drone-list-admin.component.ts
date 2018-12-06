@@ -57,7 +57,6 @@ export class DroneListAdminComponent implements OnInit {
   }
 
   update() {
-    debugger;
     const droneFormFields = this.droneForm.value;
     const drone = {
       id: droneFormFields.id,
