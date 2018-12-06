@@ -6,6 +6,7 @@ import {ManufacturerDetailsComponent} from "./manufacturer/manufacturer-details/
 import {HomeComponent} from './home/home.component';
 import {CustomerDetailsComponent} from "./customer/customer-details/customer-details.component";
 import {CustomerListComponent} from "./customer/customer-list/customer-list.component";
+import {DroneListAdminComponent} from "./drone/drone-list-admin/drone-list-admin.component";
 
 
 
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'manufacturers/:id', component: ManufacturerDetailsComponent},
   { path: 'drones', component: DroneListComponent},
   { path: '', component: HomeComponent},
-  { path: 'customers', component: CustomerListComponent}
+  { path: 'customers', component: CustomerListComponent},
+  { path: 'drones-admin', component: DroneListAdminComponent}
 ];
 
 @NgModule({

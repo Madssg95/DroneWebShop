@@ -14,7 +14,8 @@ import { DroneDetailsComponent } from './drone/drone-details/drone-details.compo
 import { ManufacturerDetailsComponent } from './manufacturer/manufacturer-details/manufacturer-details.component'
 import { HomeComponent } from './home/home.component';
 import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
-import { CustomerListComponent } from './customer/customer-list/customer-list.component'
+import { CustomerListComponent } from './customer/customer-list/customer-list.component';
+import { DroneListAdminComponent } from './drone/drone-list-admin/drone-list-admin.component'
 
 
 
@@ -30,7 +31,8 @@ import { CustomerListComponent } from './customer/customer-list/customer-list.co
     ManufacturerDetailsComponent,
     HomeComponent,
     CustomerDetailsComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    DroneListAdminComponent
   ],
   imports: [
     BrowserModule,

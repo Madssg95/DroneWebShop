@@ -19,5 +19,13 @@ export class DroneService {
   getDroneById(id: number): Observable<Drone> {
     return this.http.get<Drone>(environment.apiUrl + 'drones/' + id);
   }
+
+  updateDrones(drone: Drone): Observable<Drone> {
+    return this.http.put<Drone>(environment.apiUrl + 'drones/' + drone.id, drone);
+  }
+
+  deleteDrone(id: number): Observable<any> {
+    return this.http.delete(environment.apiUrl + 'drones/' + id);
+  }
 }
 

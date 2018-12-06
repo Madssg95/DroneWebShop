@@ -56,9 +56,8 @@ export class CustomerListComponent implements OnInit {
     const customer = this.customerForm.value;
     this.customerService.updateCustomer(customer)
       .subscribe(() => {
-        this.router.navigateByUrl('/customers');
+        this.refresh();
       });
-    this.refresh();
   }
 
   delete(id: number) {

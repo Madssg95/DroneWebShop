@@ -1,0 +1,84 @@
+<div class="container"
+     fxLayout="column"
+     fxFlex="50"
+     fxLayoutGap="30px">
+  <div fxLayout="row wrap" *ngIf="drones">
+
+
+    <mz-collapsible fxFlex="100" fxLayoutAlign="center center" fxFill="100">
+      <mz-collapsible-item *ngFor="let drone of drones">
+        <mz-collapsible-item-header style="font-size: large">Drone Id: {{drone.id}} -  Drone Name: {{drone.manufacturer}} {{drone.productName}}</mz-collapsible-item-header>
+        <mz-collapsible-item-body>
+          <form [formGroup]="droneForm" (ngSubmit)="update()">
+            <table class="striped">
+              <tbody *ngIf="!isUpdate">
+              <tr>
+                <td>Id</td>
+                <td>{{drone.id}}</td>
+              </tr>
+              <tr>
+                <td>ProductName</td>
+                <td>{{drone.productName}}</td>
+              </tr>
+              <tr>
+                <td>Manufacturer</td>
+                <td>{{drone.manufacturer}}</td>
+              </tr>
+              <tr>
+                <td>Details</td>
+                <td>{{drone.details}}</td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td>{{drone.price}}</td>
+              </tr>
+              <tr>
+                <td>ImageUrl</td>
+                <td>{{drone.imageURL}}</td>
+              </tr>
+              </tbody>
+              <tbody *ngIf="isUpdate">
+              <tr>
+                <td>Id</td>
+                <td>{{drone.id}}</td>
+              </tr>
+              <tr>
+                <td>Productname</td>
+                <td><input type="text" formControlName="productName" value="{{drone.productName}}"></td>
+              </tr>
+              <tr>
+                <td>Manufacturer</td>
+                <td><input type="text" formControlName="manufacturer" value="{{drone.manufacturer}}"></td>
+              </tr>
+              <tr>
+                <td>Details</td>
+                <td><input type="text" formControlName="details" value="{{drone.details}}"></td>
+              </tr>
+              <tr>
+                <td>Price</td>
+                <td><input type="number" formControlName="price" value="{{drone.price}}"></td>
+              </tr>
+              <tr>
+                <td>ImageUrl</td>
+                <td><input type="text" formControlName="imageURL" value="{{drone.imageURL}}"></td>
+              </tr>
+              </tbody>
+            </table>
+            <div class="buttonsRead" *ngIf="!isUpdate">
+              <button *ngIf="!isUpdate" (click)="delete(drone.id)" mz-button [float]="true" class="red"><i class="material-icons">delete</i></button>
+              <span class="right">
+            <button *ngIf="!isUpdate" (click)="setUpdate(drone)" mz-button [float]="true" class="blue"><i class="material-icons" style="margin-left: 2px">edit</i></button>
+          </span>
+            </div>
+            <div class="buttonsUpdate" *ngIf="isUpdate">
+              <button *ngIf="isUpdate" (click)="resetUpdate()" mz-button [float]="true" class="red"><i class="material-icons">cancel</i></button>
+              <span class="right">
+            <button *ngIf="isUpdate" type="submit" mz-button [float]="true" class="green"><i class="material-icons" style="margin-left: 2px">check</i></button>
+          </span>
+            </div>
+          </form>
+        </mz-collapsible-item-body>
+      </mz-collapsible-item>
+    </mz-collapsible>
+  </div>
+</div>
