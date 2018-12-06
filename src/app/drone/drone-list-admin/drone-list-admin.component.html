@@ -47,8 +47,21 @@
                 <td><input type="text" formControlName="productName" value="{{drone.productName}}"></td>
               </tr>
               <tr>
-                <td>Manufacturer</td>
+                <td>Previous Manufacturer</td>
                 <td><input type="text" formControlName="manufacturer" value="{{drone.manufacturer.name}}"></td>
+              </tr>
+              <tr>
+                <td>New Manufacturer</td>
+                <mz-select-container class="col s12 m6">
+                  <select mz-select
+                          id="manufacturer"
+                          [label]="'Label'"
+                          [placeholder]="'Select Manufacturer'"
+                          [formControlName]="'manufacturer'"
+                  >
+                    <option *ngFor="let manufacturer of manufacturers" [value]="manufacturer.id">{{manufacturer.name}}</option>
+                  </select>
+                </mz-select-container>
               </tr>
               <tr>
                 <td>Details</td>

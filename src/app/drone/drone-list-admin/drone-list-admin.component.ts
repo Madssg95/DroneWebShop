@@ -3,6 +3,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {DroneService} from "../../shared/services/drone.service";
 import {Drone} from "../../shared/model/drone";
 import {FormControl, FormGroup} from "@angular/forms";
+import {Manufacturer} from "../../shared/model/manufacturer";
+import {ManufacturerService} from "../../shared/services/manufacturer.service";
 
 @Component({
   selector: 'app-drone-list-admin',
@@ -12,8 +14,9 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class DroneListAdminComponent implements OnInit {
 
   drones: Drone[];
-  drone: Drone;
   isUpdate = false;
+  manufacturers: Manufacturer[];
+  oldManufacturerID: number;
 
   droneForm = new FormGroup( {
     id: new FormControl(''),
@@ -24,10 +27,11 @@ export class DroneListAdminComponent implements OnInit {
     manufacturer: new FormControl('')
   });
 
-  constructor(private route: ActivatedRoute, private droneService: DroneService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private droneService: DroneService, private router: Router, private manufacturerService: ManufacturerService) { }
 
   ngOnInit() {
     this.refresh();
+    this.manufacturerService.getManufacturers().subscribe(manufacturers => this.manufacturers = manufacturers);
   }
 
   private refresh() {
@@ -39,12 +43,13 @@ export class DroneListAdminComponent implements OnInit {
     this.isUpdate = true;
     this.droneForm.patchValue( {
       id: droneUpdate.id,
-      poductName: droneUpdate.productName,
+      productName: droneUpdate.productName,
       price: droneUpdate.price,
       details: droneUpdate.details,
-      imageURL: droneUpdate.imageURL,
-      manufacturer: droneUpdate.manufacturer.name
+      imageURL: droneUpdate.imageURL
     });
+    this.oldManufacturerID = droneUpdate.manufacturer.id;
+
   }
 
   resetUpdate(){
@@ -52,8 +57,20 @@ export class DroneListAdminComponent implements OnInit {
   }
 
   update() {
-    const drone = this.droneForm.value;
-    this.droneService.updateDrones(drone).subscribe(() => {
+    debugger;
+    const droneFormFields = this.droneForm.value;
+    const drone = {
+      id: droneFormFields.id,
+      productName: droneFormFields.productName,
+      price: droneFormFields.price,
+      details: droneFormFields.details,
+      imageURL: droneFormFields.imageURL,
+      manufacturer: {id: droneFormFields.manufacturer}
+    };
+    if (drone.manufacturer.id == "") {
+      drone.manufacturer.id = this.oldManufacturerID;
+    }
+    this.droneService.updateDrones(drone as Drone).subscribe(() => {
       this.refresh();
     });
   }

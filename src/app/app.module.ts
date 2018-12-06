@@ -11,7 +11,7 @@ import {
   MzDropdownModule,
   MzInputModule,
   MzModalModule,
-  MzParallaxModule,
+  MzParallaxModule, MzSelectModule,
   MzSpinnerModule, MzToastModule, MzToastService
 } from 'ngx-materialize';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -68,7 +68,8 @@ import { DroneListAdminComponent } from './drone/drone-list-admin/drone-list-adm
     MzCollapsibleModule,
     MzSpinnerModule,
     MzDropdownModule,
-    MzToastModule
+    MzToastModule,
+    MzSelectModule
   ],
   providers: [TokenService,
     LoginService,
