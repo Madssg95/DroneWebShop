@@ -4,8 +4,16 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DroneListComponent } from './drone/drone-list/drone-list.component';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MzButtonModule, MzCardModule, MzCollapsibleModule, MzInputModule, MzModalModule, MzParallaxModule} from 'ngx-materialize';
+import {
+  MzButtonModule,
+  MzCardModule,
+  MzCollapsibleModule,
+  MzDropdownModule,
+  MzInputModule,
+  MzModalModule,
+  MzParallaxModule,
+  MzSpinnerModule
+} from 'ngx-materialize';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ReactiveFormsModule} from '@angular/forms';
 import { MzNavbarModule } from 'ngx-materialize';
@@ -15,9 +23,14 @@ import { ManufacturerDetailsComponent } from './manufacturer/manufacturer-detail
 import { HomeComponent } from './home/home.component';
 import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
 import { CustomerListComponent } from './customer/customer-list/customer-list.component'
-
-
-
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { AccessDeniedComponent } from './shared/access-denied/access-denied.component';
+import { LoginComponent } from './auth/login/login.component';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {TokenService} from './shared/services/token.service';
+import {LoginService} from './shared/services/login.service';
+import {AuthGuard} from './auth/guards/auth.guard';
+import {AdminGuard} from './auth/guards/admin.guard';
 
 
 
@@ -25,6 +38,8 @@ import { CustomerListComponent } from './customer/customer-list/customer-list.co
   declarations: [
     AppComponent,
     DroneListComponent,
+    AccessDeniedComponent,
+    LoginComponent,
     NavbarComponent,
     DroneDetailsComponent,
     ManufacturerDetailsComponent,
@@ -32,22 +47,31 @@ import { CustomerListComponent } from './customer/customer-list/customer-list.co
     CustomerDetailsComponent,
     CustomerListComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NoopAnimationsModule,
     MzButtonModule,
     MzInputModule,
     FlexLayoutModule,
     ReactiveFormsModule,
+    MzCardModule,
     MzNavbarModule,
     MzParallaxModule,
     MzModalModule,
     MzCardModule,
-    MzCollapsibleModule
+    MzCollapsibleModule,
+    MzSpinnerModule,
+    MzDropdownModule
+
   ],
-  providers: [],
+  providers: [TokenService,
+    LoginService,
+    AuthGuard,
+    AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

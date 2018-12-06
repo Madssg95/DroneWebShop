@@ -1,0 +1,32 @@
+<Form [formGroup]="loginform">
+
+  <div class="login" *ngIf="!loginProcess">
+  <div class="col s4">
+    <mz-card [hoverable]="true" style="width: 500px; text-align: center">
+      <mz-card-title style="text-align: center" >
+        <p *ngIf="loginError" style="color: red; font-size: small" >{{loginError}}</p>
+
+        <div class="error message"></div>
+      </mz-card-title>
+      <mz-card-content>
+        <mz-input-container>
+          <input id="userName" mz-input="" placeholder="Brugernavn" name="userName" formControlName="userName"type="text">
+        </mz-input-container>
+        <mz-input-container>
+          <input id="password" mz-input="" placeholder="Kodeord" name="password" formControlName="password" type="password">
+        </mz-input-container>
+      </mz-card-content>
+      <mz-card-action>
+        <button _ngcontent-c13="" class="ng-tns-c13-1 btn waves-effect waves-light grey darken-2" (click)="login()" mz-button="">Login</button>
+      </mz-card-action>
+    </mz-card>
+  </div>
+  </div>
+
+  <div class="spinner" style="text-align: center;" *ngIf="loginProcess">
+    <mz-spinner color="green"></mz-spinner>
+  </div>
+
+
+
+</Form>

@@ -15,7 +15,7 @@ export class ManufacturerService {
     return this.http.get<Manufacturer[]>(environment.apiUrl + 'manufacturers');
   }
 
-  getManufacturerById(id: number): Observable<Manufacturer>{
+  getManufacturerById(id: number): Observable<Manufacturer> {
     return this.http.get<Manufacturer>(environment.apiUrl + 'manufacturers/' + id);
   }
 
