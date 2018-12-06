@@ -31,7 +31,7 @@ export class DroneListAdminComponent implements OnInit {
   }
 
   private refresh() {
-    this.droneService.getDrones().subscribe(drones => this.drones = drones);
+    this.droneService.getDronesWithManufacturers().subscribe(drones => this.drones = drones);
     this.isUpdate = false;
   }
 
@@ -43,7 +43,7 @@ export class DroneListAdminComponent implements OnInit {
       price: droneUpdate.price,
       details: droneUpdate.details,
       imageURL: droneUpdate.imageURL,
-      manufacturer: droneUpdate.manufacturer
+      manufacturer: droneUpdate.manufacturer.name
     });
   }
 

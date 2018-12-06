@@ -7,22 +7,22 @@
 
     <mz-collapsible fxFlex="100" fxLayoutAlign="center center" fxFill="100">
       <mz-collapsible-item *ngFor="let drone of drones">
-        <mz-collapsible-item-header style="font-size: large">Drone Id: {{drone.id}} -  Drone Name: {{drone.manufacturer}} {{drone.productName}}</mz-collapsible-item-header>
+        <mz-collapsible-item-header style="font-size: large">Drone Id: {{drone.id}} -  Drone Name: {{drone.manufacturer.name}} {{drone.productName}}</mz-collapsible-item-header>
         <mz-collapsible-item-body>
           <form [formGroup]="droneForm" (ngSubmit)="update()">
             <table class="striped">
               <tbody *ngIf="!isUpdate">
               <tr>
                 <td>Id</td>
-                <td>{{drone.id}}</td>
+                <td style="text-align: center">{{drone.id}}</td>
               </tr>
               <tr>
                 <td>ProductName</td>
-                <td>{{drone.productName}}</td>
+                <td style="text-align: center">{{drone.productName}}</td>
               </tr>
               <tr>
                 <td>Manufacturer</td>
-                <td>{{drone.manufacturer}}</td>
+                <td style="text-align: center">{{drone.manufacturer.name}}</td>
               </tr>
               <tr>
                 <td>Details</td>
@@ -30,7 +30,7 @@
               </tr>
               <tr>
                 <td>Price</td>
-                <td>{{drone.price}}</td>
+                <td style="text-align: center">{{drone.price}}</td>
               </tr>
               <tr>
                 <td>ImageUrl</td>
@@ -48,7 +48,7 @@
               </tr>
               <tr>
                 <td>Manufacturer</td>
-                <td><input type="text" formControlName="manufacturer" value="{{drone.manufacturer}}"></td>
+                <td><input type="text" formControlName="manufacturer" value="{{drone.manufacturer.name}}"></td>
               </tr>
               <tr>
                 <td>Details</td>

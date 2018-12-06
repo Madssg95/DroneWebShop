@@ -16,6 +16,10 @@ export class DroneService {
     return this.http.get<Drone[]>(environment.apiUrl + 'drones');
   }
 
+  getDronesWithManufacturers(): Observable<Drone[]> {
+    return this.http.get<Drone[]>(environment.apiUrl + 'drones?includeManufacturers=true');
+  }
+
   getDroneById(id: number): Observable<Drone> {
     return this.http.get<Drone>(environment.apiUrl + 'drones/' + id);
   }
