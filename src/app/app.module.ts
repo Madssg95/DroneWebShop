@@ -12,7 +12,7 @@ import {
   MzInputModule,
   MzModalModule,
   MzParallaxModule,
-  MzSpinnerModule
+  MzSpinnerModule, MzToastModule, MzToastService
 } from 'ngx-materialize';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -65,8 +65,8 @@ import {AdminGuard} from './auth/guards/admin.guard';
     MzCardModule,
     MzCollapsibleModule,
     MzSpinnerModule,
-    MzDropdownModule
-
+    MzDropdownModule,
+    MzToastModule
   ],
   providers: [TokenService,
     LoginService,
