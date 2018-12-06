@@ -1,0 +1,17 @@
+<div fxLayout="column"
+     fxFill
+     fxLayoutGap="10px">
+  <div fxLayout="row" fxLayoutAlign="center top">
+    <form [formGroup]="manufacturerForm" (ngSubmit)="create()" style="width: 60%; margin-top: 1%">
+      <table class="striped">
+        <tbody>
+        <tr>
+          <td>Manufacturer name</td>
+          <td><input type="text" formControlName="name" placeholder="Enter name of manufacturer" required="required"></td>
+        </tr>
+        </tbody>
+      </table>
+      <button mz-button class="green" style="float: right; margin-top: 20px">Create a new manufacturer</button>
+    </form>
+  </div>
+</div>

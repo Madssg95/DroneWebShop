@@ -36,7 +36,6 @@ export class DroneAddComponent implements OnInit {
   }
 
   create(){
-    debugger;
     const droneFormFields = this.droneForm.value;
     const drone = {
       productName: droneFormFields.productName,
