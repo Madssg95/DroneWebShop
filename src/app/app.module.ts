@@ -31,6 +31,7 @@ import {TokenService} from './shared/services/token.service';
 import {LoginService} from './shared/services/login.service';
 import {AuthGuard} from './auth/guards/auth.guard';
 import {AdminGuard} from './auth/guards/admin.guard';
+import { DroneListAdminComponent } from './drone/drone-list-admin/drone-list-admin.component'
 
 
 
@@ -45,7 +46,8 @@ import {AdminGuard} from './auth/guards/admin.guard';
     ManufacturerDetailsComponent,
     HomeComponent,
     CustomerDetailsComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    DroneListAdminComponent
   ],
 
   imports: [
