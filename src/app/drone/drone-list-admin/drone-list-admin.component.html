@@ -3,8 +3,6 @@
      fxFlex="50"
      fxLayoutGap="30px">
   <div fxLayout="row wrap" *ngIf="drones">
-
-
     <mz-collapsible fxFlex="100" fxLayoutAlign="center center" fxFill="100">
       <mz-collapsible-item *ngFor="let drone of drones">
         <mz-collapsible-item-header style="font-size: large">Drone Id: {{drone.id}} -  Drone Name: {{drone.manufacturer.name}} {{drone.productName}}</mz-collapsible-item-header>

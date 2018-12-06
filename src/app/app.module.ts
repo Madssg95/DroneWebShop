@@ -34,6 +34,7 @@ import {AdminGuard} from './auth/guards/admin.guard';
 import { DroneListAdminComponent } from './drone/drone-list-admin/drone-list-admin.component';
 import { DroneAddComponent } from './drone/drone-add/drone-add.component';
 import { ManufacturerAddComponent } from './manufacturer/manufacturer-add/manufacturer-add.component';
+import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manufacturer-list.component';
 
 
 
@@ -51,7 +52,8 @@ import { ManufacturerAddComponent } from './manufacturer/manufacturer-add/manufa
     CustomerListComponent,
     DroneListAdminComponent,
     DroneAddComponent,
-    ManufacturerAddComponent
+    ManufacturerAddComponent,
+    ManufacturerListComponent
   ],
 
   imports: [

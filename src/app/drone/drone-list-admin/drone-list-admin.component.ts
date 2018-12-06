@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
 import {DroneService} from "../../shared/services/drone.service";
 import {Drone} from "../../shared/model/drone";
 import {FormControl, FormGroup} from "@angular/forms";
@@ -27,7 +26,7 @@ export class DroneListAdminComponent implements OnInit {
     manufacturer: new FormControl('')
   });
 
-  constructor(private route: ActivatedRoute, private droneService: DroneService, private router: Router, private manufacturerService: ManufacturerService) { }
+  constructor(private droneService: DroneService, private manufacturerService: ManufacturerService) { }
 
   ngOnInit() {
     this.refresh();
