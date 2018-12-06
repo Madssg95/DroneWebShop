@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ManufacturerService} from "../../shared/services/manufacturer.service";
 import {Manufacturer} from "../../shared/model/manufacturer";
 import {FormControl, FormGroup} from "@angular/forms";
+import {Drone} from "../../shared/model/drone";
 
 @Component({
   selector: 'app-manufacturer-list',
@@ -14,7 +15,8 @@ export class ManufacturerListComponent implements OnInit {
   isUpdate = false;
 
   manufacturerForm = new FormGroup( {
-    name: new FormControl(''),
+    id: new FormControl(''),
+    name: new FormControl('')
   });
 
   constructor(private manufacturerService: ManufacturerService) { }
@@ -27,6 +29,36 @@ export class ManufacturerListComponent implements OnInit {
     this.manufacturerService.getManufacturers().subscribe(manufacturers => this.manufacturers = manufacturers);
   }
 
+  setUpdate(manufacturerUpdate: Manufacturer){
+    this.isUpdate = true;
+    this.manufacturerForm.patchValue( {
+      id: manufacturerUpdate.id,
+      name: manufacturerUpdate.name
+    });
+  }
 
+
+  resetUpdate(){
+    this.isUpdate = false;
+  }
+
+  update() {
+    debugger;
+    const manufacturerFormFields = this.manufacturerForm.value;
+    const manufacturer = {
+      id: manufacturerFormFields.id,
+      name: manufacturerFormFields.name
+    };
+
+    this.manufacturerService.updateManufacturer(manufacturer as Manufacturer).subscribe(() => {
+      this.refresh();
+    });
+  }
+
+  delete(id: number) {
+    this.manufacturerService.deleteManufacturer(id).subscribe(() => {
+      this.refresh();
+    });
+  }
 
 }

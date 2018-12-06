@@ -24,7 +24,7 @@ export class ManufacturerService {
   }
 
   updateManufacturer(manufacturer: Manufacturer): Observable<Manufacturer> {
-    return this.http.put<Manufacturer>(environment.apiUrl + 'manufacturer/' + manufacturer.id, manufacturer);
+    return this.http.put<Manufacturer>(environment.apiUrl + 'manufacturers/' + manufacturer.id, manufacturer);
   }
 
   deleteManufacturer(id: number): Observable<any> {

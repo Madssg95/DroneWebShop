@@ -2,7 +2,7 @@
      fxLayout="column"
      fxFlex="50"
      fxLayoutGap="30px">
-  <div fxLayout="row wrap" *ngIf="drones">
+  <div fxLayout="row wrap" *ngIf="manufacturers">
     <mz-collapsible fxFlex="100" fxLayoutAlign="center center" fxFill="100">
       <mz-collapsible-item *ngFor="let manufacturer of manufacturers">
         <mz-collapsible-item-header style="font-size: large">Manufacturer Id: {{manufacturer.id}} -  Manufacturer Name: {{manufacturer.name}}</mz-collapsible-item-header>
