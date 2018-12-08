@@ -19,15 +19,6 @@ export class ShoppingCartService {
     if (this.localStorageSupported) {
       localStorage.setItem(String(orderLine.droneId), JSON.stringify(orderLine));
     }
-
-    var list = new Array<OrderLine>();
-
-    for (var i = 0; i < localStorage.length; i++) {
-      var key = localStorage.key(i);
-      var value = JSON.parse(localStorage.getItem(key));
-
-      list.push(value);
-    }
   }
 
 
@@ -50,5 +41,9 @@ export class ShoppingCartService {
 
   clearLocalStorage() {
     localStorage.clear();
+  }
+
+  updateQtyInLocal(orderLine: OrderLine) {
+    localStorage.setItem(String(orderLine.droneId), JSON.stringify(orderLine));
   }
 }

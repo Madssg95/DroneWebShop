@@ -1,4 +1,8 @@
-.inline-block-child {
-  display: inline-block;
+.imageContainer {
+  float: left;
+}
+
+.infoContainer {
+  float: left;
 
 }

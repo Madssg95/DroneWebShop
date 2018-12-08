@@ -24,5 +24,8 @@ export class ShoppingCartComponent implements OnInit {
   }
 
 
+  updateQty(orderLine: OrderLine) {
+    this.shoppingcartService.updateQtyInLocal(orderLine);
 
+  }
 }

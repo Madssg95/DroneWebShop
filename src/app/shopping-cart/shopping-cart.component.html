@@ -1,22 +1,25 @@
 <div class="container">
 
- <button mz-button class="grey darken-1" style="margin-top: 6%" routerLink="/drones"><i class="material-icons left">arrow_back_ios</i>Forsæt Shopping</button>
+  <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="orderLines.length > 0">
+    <button mz-button class="grey darken-1" style="margin-top: 6%" routerLink="/drones"><i class="material-icons left">arrow_back_ios</i>Forsæt Shopping</button>
+    <button mz-button class="grey darken-1" style="margin-top: 6%"><i class="material-icons right">arrow_forward_ios</i>Gå til checkout</button>
+  </div>
 
   <div class="shopping-cart" style="margin-top: 5%">
-    <mz-card *ngFor="let orderLine of orderLines ">
+    <mz-card *ngFor="let orderLine of orderLines" [hoverable]="true">
       <mz-card-content>
-
+        <div fxLayout="row" fxLayoutAlign="space-between center">
         <img src="{{orderLine.drone.imageURL}}" style="width: 250px; height: 250px; object-fit: cover; border-color: gray">
-        <h5>Produkt: {{orderLine.drone.productName}}</h5>
-        <h5>Fabrikant: {{orderLine.drone.manufacturer.name}}</h5>
-        <h5>Pris: {{orderLine.drone.price}} DKK</h5>
-
-        <input mz-input [label]="'Quantity'" id="inline-input" type="number" min="1" max="10" style="text-align: center; margin-top: 3%" [value]="orderLine.qty">
-
-
-
+          <div>
+          <h5>Produkt: {{orderLine.drone.productName}}</h5>
+          <h5>Fabrikant: {{orderLine.drone.manufacturer.name}}</h5>
+          <h5>Pris: {{orderLine.drone.price}} DKK</h5>
+          </div>
+        <mz-input-container>
+        <input mz-input [label]="'Quantity'" id="inline-input" type="number" min="1" max="10" style="text-align: center; margin-top: 3%; width: 200px" [(ngModel)]="orderLine.qty" (click)="updateQty(orderLine)">
+        </mz-input-container>
         <button mz-button class="red" [float]="true" (click)="removeItem(orderLine)"><i class="material-icons left">close</i></button>
-
+        </div>
       </mz-card-content>
       <mz-card-action>
 
@@ -24,6 +27,13 @@
     </mz-card>
 
   </div>
+
+  <div div fxLayout="column" fxLayoutAlign="center center" *ngIf="orderLines.length == 0" style="margin-top: 25%">
+    <h5>Din inkøbskurv er tom :(</h5>
+    <h6>Tjek vores produktside for produkter</h6>
+    <button mz-button class="grey darken-2" style="margin-top: 10%" routerLink="/drones">Til Produktside</button>
+  </div>
+
 
 
 
