@@ -24,12 +24,16 @@
         </mz-navbar-item>
       </mz-navbar-item-container>
 
+      <mz-navbar-item-container [align]="'right'">
+        <mz-navbar-item *ngIf="!loggedIn"><a routerLink="/login"><i class="material-icons left">person</i>login</a></mz-navbar-item>
+        <mz-navbar-item *ngIf="loggedIn"><a (click)="onLogout($event)" routerLink="/login">Logout</a></mz-navbar-item>
+      </mz-navbar-item-container>
 
       <mz-navbar-item-container [align]="'right'">
-        <mz-navbar-item *ngIf="!loggedIn"><a routerLink="/login"><i class="material-icons left">account_circle</i>login</a></mz-navbar-item>
-        <mz-navbar-item *ngIf="loggedIn"><a (click)="onLogout($event)" routerLink="/login">Logout</a></mz-navbar-item>
-
+        <mz-navbar-item><a routerLink="/shopping-cart"><i class="material-icons">shopping_cart</i></a></mz-navbar-item>
       </mz-navbar-item-container>
+
+
     </mz-navbar>
   </div>
 

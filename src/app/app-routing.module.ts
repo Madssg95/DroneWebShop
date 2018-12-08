@@ -12,6 +12,7 @@ import {DroneListAdminComponent} from "./drone/drone-list-admin/drone-list-admin
 import {DroneAddComponent} from "./drone/drone-add/drone-add.component";
 import {ManufacturerAddComponent} from "./manufacturer/manufacturer-add/manufacturer-add.component";
 import {ManufacturerListComponent} from "./manufacturer/manufacturer-list/manufacturer-list.component";
+import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 
 
 
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'drones-admin', component: DroneListAdminComponent},
   { path: 'drones-add', component: DroneAddComponent},
   { path: 'manufacturers-add', component: ManufacturerAddComponent},
-  { path: 'manufacturers-list', component: ManufacturerListComponent}
+  { path: 'manufacturers-list', component: ManufacturerListComponent},
+  {path: 'shopping-cart', component: ShoppingCartComponent}
 ];
 
 @NgModule({

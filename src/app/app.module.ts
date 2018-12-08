@@ -15,7 +15,7 @@ import {
   MzSpinnerModule, MzToastModule, MzToastService
 } from 'ngx-materialize';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MzNavbarModule } from 'ngx-materialize';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { DroneDetailsComponent } from './drone/drone-details/drone-details.component';
@@ -35,6 +35,7 @@ import { DroneListAdminComponent } from './drone/drone-list-admin/drone-list-adm
 import { DroneAddComponent } from './drone/drone-add/drone-add.component';
 import { ManufacturerAddComponent } from './manufacturer/manufacturer-add/manufacturer-add.component';
 import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manufacturer-list.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 
@@ -53,7 +54,8 @@ import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manu
     DroneListAdminComponent,
     DroneAddComponent,
     ManufacturerAddComponent,
-    ManufacturerListComponent
+    ManufacturerListComponent,
+    ShoppingCartComponent
   ],
 
   imports: [
@@ -75,7 +77,8 @@ import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manu
     MzSpinnerModule,
     MzDropdownModule,
     MzToastModule,
-    MzSelectModule
+    MzSelectModule,
+    FormsModule
   ],
   providers: [TokenService,
     LoginService,

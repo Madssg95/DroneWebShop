@@ -25,22 +25,14 @@
           <br>
             <div class="row m-valign-wrapper">
               <div class="col-6 offset-3">
-                <mz-input-container
-                  [inline]="true"
-                >
-                  <input mz-input
-                         [label]="'Quantity'"
-                         id="inline-input"
-                         type="number"
-                         min="1"
-                         max="10"
-                         value="1" style="text-align: center">
+                <mz-input-container [inline]="true">
+                  <input mz-input [label]="'Quantity'" id="inline-input" type="number" min="1" max="10" style="text-align: center" [(ngModel)]="qty">
                 </mz-input-container>
               </div>
             </div>
           </div>
           <div class="collection" style="margin-top: 5%">
-            <a href="javascript:void(0)" class="collection-item" (click)="showToast()">Add to cart<i class="material-icons" style="float: right">add_shopping_cart</i></a>
+            <a href="javascript:void(0)" class="collection-item" (click)="addToCart(drone)">Add to cart<i class="material-icons" style="float: right">add_shopping_cart</i></a>
           </div>
         </div>
     </div>
