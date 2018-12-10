@@ -36,6 +36,7 @@ import { DroneAddComponent } from './drone/drone-add/drone-add.component';
 import { ManufacturerAddComponent } from './manufacturer/manufacturer-add/manufacturer-add.component';
 import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manufacturer-list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 
@@ -55,7 +56,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     DroneAddComponent,
     ManufacturerAddComponent,
     ManufacturerListComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    CheckoutComponent
   ],
 
   imports: [
