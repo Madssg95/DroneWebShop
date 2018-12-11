@@ -28,9 +28,12 @@ export class ShoppingCartService {
 
     for (var i = 0; i < localStorage.length; i++) {
       var key = localStorage.key(i);
-      var value = JSON.parse(localStorage.getItem(key));
 
-      list.push(value);
+      if(key !== 'currentUser') {
+        var value = JSON.parse(localStorage.getItem(key));
+        list.push(value);
+      }
+
     }
     return list;
   }

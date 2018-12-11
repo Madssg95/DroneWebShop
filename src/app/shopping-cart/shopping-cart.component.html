@@ -5,7 +5,7 @@
     <button mz-button class="grey darken-1" style="margin-top: 6%"><i class="material-icons right">arrow_forward_ios</i>Gå til checkout</button>
   </div>
 
-  <div class="shopping-cart" style="margin-top: 5%">
+  <div class="shopping-cart" style="margin-top: 5%" *ngIf="orderLines.length > 0">
     <mz-card *ngFor="let orderLine of orderLines" [hoverable]="true">
       <mz-card-content>
         <div fxLayout="row" fxLayoutAlign="space-between center">
