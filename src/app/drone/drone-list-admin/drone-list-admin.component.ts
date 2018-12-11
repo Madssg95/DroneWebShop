@@ -34,7 +34,7 @@ export class DroneListAdminComponent implements OnInit {
   }
 
   private refresh() {
-    this.droneService.getDronesWithManufacturers().subscribe(drones => this.drones = drones);
+    this.droneService.getDronesWithManufacturers().subscribe(drones => this.drones = drones.list);
     this.isUpdate = false;
   }
 

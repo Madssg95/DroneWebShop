@@ -23,8 +23,6 @@ const routes: Routes = [
   { path: 'drones', component: DroneListComponent},
   { path: 'drones/:id', component: DroneDetailsComponent},
   { path: 'manufacturers/:id', component: ManufacturerDetailsComponent},
-  { path: '', component: HomeComponent},
-  { path: 'customers', component: CustomerListComponent},
   { path: 'drones-admin', component: DroneListAdminComponent},
   { path: 'drones-add', component: DroneAddComponent},
   { path: 'manufacturers-add', component: ManufacturerAddComponent},

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {Drone} from '../model/drone';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
+import {FilteredDronesList} from "../model/filteredDronesList";
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +13,16 @@ export class DroneService {
   constructor(private http: HttpClient) { }
 
 
-  getDrones(): Observable<Drone[]> {
-    return this.http.get<Drone[]>(environment.apiUrl + 'drones');
+  getDrones(currentPage: number, itemsPrPage: number, isSortedByPriceDescending: boolean): Observable<FilteredDronesList> {
+    const params = new HttpParams()
+      .set('currentPage', currentPage.toString())
+      .set('itemsPerPage', itemsPrPage.toString())
+      .set('IsSortedDescendingByPrice', String(isSortedByPriceDescending));
+    return this.http.get<FilteredDronesList>(environment.apiUrl + 'drones', {params: params});
   }
 
-  getDronesWithManufacturers(): Observable<Drone[]> {
-    return this.http.get<Drone[]>(environment.apiUrl + 'drones?includeManufacturers=true');
+  getDronesWithManufacturers(): Observable<FilteredDronesList> {
+    return this.http.get<FilteredDronesList>(environment.apiUrl + 'drones?includeOtherEntity=true');
   }
 
   getDroneById(id: number): Observable<Drone> {

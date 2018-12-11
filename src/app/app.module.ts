@@ -10,12 +10,12 @@ import {
   MzCollapsibleModule,
   MzDropdownModule,
   MzInputModule,
-  MzModalModule,
+  MzModalModule, MzPaginationModule,
   MzParallaxModule, MzSelectModule,
-  MzSpinnerModule, MzToastModule, MzToastService
+  MzSpinnerModule, MzToastModule
 } from 'ngx-materialize';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MzNavbarModule } from 'ngx-materialize';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { DroneDetailsComponent } from './drone/drone-details/drone-details.component';
@@ -75,7 +75,9 @@ import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manu
     MzSpinnerModule,
     MzDropdownModule,
     MzToastModule,
-    MzSelectModule
+    MzSelectModule,
+    MzPaginationModule,
+    FormsModule
   ],
   providers: [TokenService,
     LoginService,
