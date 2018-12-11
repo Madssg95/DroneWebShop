@@ -13,7 +13,7 @@
           <div>
           <h5>Produkt: {{orderLine.drone.productName}}</h5>
           <h5>Fabrikant: {{orderLine.drone.manufacturer.name}}</h5>
-          <h5>Pris: {{orderLine.boughtPrice * orderLine.qty}} DKK</h5>
+          <h5>Pris: {{orderLine.drone.price}} DKK</h5>
           </div>
         <mz-input-container>
         <input mz-input [label]="'Quantity'" id="inline-input" type="number" min="1" max="10" style="text-align: center; margin-top: 3%; width: 200px" [(ngModel)]="orderLine.qty" (click)="updateQty(orderLine)">
