@@ -35,6 +35,7 @@ import { DroneAddComponent } from './drone/drone-add/drone-add.component';
 import { ManufacturerAddComponent } from './manufacturer/manufacturer-add/manufacturer-add.component';
 import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manufacturer-list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import {YoutubePlayerModule} from 'ngx-youtube-player';
 
 
 
@@ -78,7 +79,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     MzToastModule,
     MzSelectModule,
     MzPaginationModule,
-    FormsModule
+    FormsModule,
+    YoutubePlayerModule
   ],
   providers: [TokenService,
     LoginService,

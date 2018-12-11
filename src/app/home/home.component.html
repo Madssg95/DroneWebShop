@@ -221,11 +221,13 @@
 
 
 
-<mz-modal #natur>
+<mz-modal #natur [options]="natureModalOptions">
   <mz-modal-content>
     <div style="text-align: center; margin-top: 5%">
       <h5 style="margin-bottom: 5%">Natur</h5>
       <h6> Åforløb vest for Troldhede</h6>
+
+      <youtube-player [videoId]="'AtlXmQyYx9Q'" (ready)="saveNature($event)"></youtube-player>
 
       <iframe width="560" height="315" src="https://www.youtube.com/embed/AtlXmQyYx9Q" frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

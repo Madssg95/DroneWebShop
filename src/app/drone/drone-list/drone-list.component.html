@@ -1,3 +1,4 @@
+<div class="container">
 <div class="dronesite">
   <div class="sidenav" fxFlex="15">
     <ul class="collection">
@@ -12,7 +13,7 @@
      fxLayout="column"
      fxFlex="80"
      fxLayoutGap="10px">
-  <mz-pagination class="col s12 m6"
+  <mz-pagination class="col s12 m6" *ngIf="count"
                  (pageChange)="pageChange($event)"
                  [itemsPerPage]="pageEvent.pageSize"
                  [totalItems]="count"
@@ -51,4 +52,6 @@
     </div>
   </div>
 </div>
+</div>
+
 </div>

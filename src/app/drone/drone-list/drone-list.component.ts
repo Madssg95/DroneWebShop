@@ -32,9 +32,10 @@ export class DroneListComponent implements OnInit {
   refresh() {
     this.droneService.getDrones(this.pageEvent.pageIndex, this.pageEvent.pageSize, this.isSorted).subscribe(listOfDrones => {
       this.count = listOfDrones.count;
-      this.drones = listOfDrones.list});
+      this.drones = listOfDrones.list;
+      console.log(this.count);
+    });
     this.manufacturerService.getManufacturers().subscribe(listOfManufacturers => (this.manufacturers = listOfManufacturers));
-    console.log(this.count);
   }
 
   pageChange(currentPage: number) {
