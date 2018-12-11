@@ -10,9 +10,9 @@ import {
   MzCollapsibleModule,
   MzDropdownModule,
   MzInputModule,
-  MzModalModule,
+  MzModalModule, MzPaginationModule,
   MzParallaxModule, MzSelectModule,
-  MzSpinnerModule, MzToastModule, MzToastService
+  MzSpinnerModule, MzToastModule
 } from 'ngx-materialize';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -26,7 +26,6 @@ import { CustomerListComponent } from './customer/customer-list/customer-list.co
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { AccessDeniedComponent } from './shared/access-denied/access-denied.component';
 import { LoginComponent } from './auth/login/login.component';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {TokenService} from './shared/services/token.service';
 import {LoginService} from './shared/services/login.service';
 import {AuthGuard} from './auth/guards/auth.guard';
@@ -78,6 +77,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     MzDropdownModule,
     MzToastModule,
     MzSelectModule,
+    MzPaginationModule,
     FormsModule
   ],
   providers: [TokenService,

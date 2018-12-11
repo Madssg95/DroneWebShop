@@ -12,15 +12,19 @@
               <tbody *ngIf="!isUpdate">
               <tr>
                 <td>Id</td>
-                <td style="text-align: center">{{manufacturer.id}}</td>
+                <td >{{manufacturer.id}}</td>
               </tr>
               <tr>
                 <td>Manufacturer Name</td>
-                <td style="text-align: center">{{manufacturer.name}}</td>
+                <td >{{manufacturer.name}}</td>
               </tr>
               <tr>
                 <td>Drones </td>
-                <td style="text-align: center" *ngFor="let drone of manufacturer.drones">{{drone.productName}}</td>
+                <td> </td>
+              </tr>
+              <tr *ngFor="let drone of manufacturer.drones">
+                <td> </td>
+                <td>{{drone.productName}}</td>
               </tr>
               </tbody>
               <tbody *ngIf="isUpdate">

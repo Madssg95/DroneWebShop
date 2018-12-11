@@ -7,10 +7,30 @@
     </ul>
     </ul>
   </div>
+  <p>{{count}} items</p>
 <div class="container"
      fxLayout="column"
      fxFlex="80"
      fxLayoutGap="10px">
+  <mz-pagination class="col s12 m6"
+                 (pageChange)="pageChange($event)"
+                 [itemsPerPage]="pageEvent.pageSize"
+                 [totalItems]="count"
+  >
+  </mz-pagination>
+  <mz-select-container class="col s12 m6">
+    <select mz-select
+            id="sortingForm"
+            [(ngModel)]="isSorted"
+            [label]="'Sortering'"
+            [placeholder]="'Sorter efter:'"
+            (change)="refresh()"
+
+    >
+      <option [value]="false">Pris lav til høj</option>
+      <option [value]="true">Pris høj til lav</option>
+    </select>
+  </mz-select-container>
   <div fxLayout="row wrap" *ngIf="drones">
     <div fxFlex="33" *ngFor="let drone of drones">
       <div class="col s12 m4">
@@ -18,7 +38,7 @@
         <div class="card hoverable" style="margin: 2%; color: black">
           <div class="card-image">
             <img src={{drone.imageURL}}>
-            <span class="card-title">{{drone.model}}</span>
+            <span class="card-title">{{drone.manufacturer}}</span>
           </div>
           <div class="card-content" style="width:360px;height: 170px">
             <p style="text-align: center; font-size: x-large">{{drone.productName}}</p>

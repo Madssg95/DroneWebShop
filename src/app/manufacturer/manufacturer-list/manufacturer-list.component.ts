@@ -16,7 +16,8 @@ export class ManufacturerListComponent implements OnInit {
 
   manufacturerForm = new FormGroup( {
     id: new FormControl(''),
-    name: new FormControl('')
+    name: new FormControl(''),
+    drones: new FormControl('')
   });
 
   constructor(private manufacturerService: ManufacturerService) { }
@@ -26,14 +27,16 @@ export class ManufacturerListComponent implements OnInit {
   }
 
   refresh() {
-    this.manufacturerService.getManufacturers().subscribe(manufacturers => this.manufacturers = manufacturers);
+    this.manufacturerService.getManufacturersIncludeDrones().subscribe(manufacturers => this.manufacturers = manufacturers);
+    this.isUpdate = false;
   }
 
   setUpdate(manufacturerUpdate: Manufacturer){
     this.isUpdate = true;
     this.manufacturerForm.patchValue( {
       id: manufacturerUpdate.id,
-      name: manufacturerUpdate.name
+      name: manufacturerUpdate.name,
+      drones: manufacturerUpdate.drones
     });
   }
 
@@ -47,7 +50,8 @@ export class ManufacturerListComponent implements OnInit {
     const manufacturerFormFields = this.manufacturerForm.value;
     const manufacturer = {
       id: manufacturerFormFields.id,
-      name: manufacturerFormFields.name
+      name: manufacturerFormFields.name,
+      drones: manufacturerFormFields.drones
     };
 
     this.manufacturerService.updateManufacturer(manufacturer as Manufacturer).subscribe(() => {

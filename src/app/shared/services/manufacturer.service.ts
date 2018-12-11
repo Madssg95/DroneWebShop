@@ -15,6 +15,10 @@ export class ManufacturerService {
     return this.http.get<Manufacturer[]>(environment.apiUrl + 'manufacturers');
   }
 
+  getManufacturersIncludeDrones(): Observable<Manufacturer[]> {
+    return this.http.get<Manufacturer[]>(environment.apiUrl + 'manufacturers?includeOtherEntity=true')
+  }
+
   getManufacturerById(id: number): Observable<Manufacturer> {
     return this.http.get<Manufacturer>(environment.apiUrl + 'manufacturers/' + id);
   }
