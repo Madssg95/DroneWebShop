@@ -7,5 +7,6 @@ export class Drone {
   details: string;
   imageURL: string;
   manufacturer: Manufacturer;
+  userManualURL: string;
 
 }

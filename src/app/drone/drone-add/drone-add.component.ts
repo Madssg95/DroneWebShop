@@ -18,10 +18,11 @@ export class DroneAddComponent implements OnInit {
     price: new FormControl(''),
     details: new FormControl(''),
     imageURL: new FormControl(''),
+    userManualURL: new FormControl(''),
     manufacturer: new FormControl('')
   });
 
-  isNewManufacturer= false;
+  isNewManufacturer = false;
 
   manufacturers: Manufacturer[];
 
@@ -42,6 +43,7 @@ export class DroneAddComponent implements OnInit {
       price: droneFormFields.price,
       details: droneFormFields.details,
       imageURL: droneFormFields.imageURL,
+      userManualURL: droneFormFields.userManualURL,
       manufacturer: {name: droneFormFields.manufacturer},
     };
 

@@ -29,7 +29,7 @@ export class ShoppingCartService {
     for (var i = 0; i < localStorage.length; i++) {
       var key = localStorage.key(i);
 
-      if(key !== 'currentUser') {
+      if(key !== 'currentUser' && key !== 'token') {
         var value = JSON.parse(localStorage.getItem(key));
         list.push(value);
       }

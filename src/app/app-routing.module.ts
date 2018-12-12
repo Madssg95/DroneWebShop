@@ -14,23 +14,24 @@ import {ManufacturerAddComponent} from "./manufacturer/manufacturer-add/manufact
 import {ManufacturerListComponent} from "./manufacturer/manufacturer-list/manufacturer-list.component";
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {SignUpComponent} from "./auth/sign-up/sign-up.component";
+import {AuthGuard} from './auth/guards/auth.guard';
 
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'customers', component: CustomerListComponent},
+  { path: 'customers', component: CustomerListComponent, canActivate: [AuthGuard, AdminGuard]},
   {path: 'denied' , component: AccessDeniedComponent},
   {path: 'login', component: LoginComponent},
   { path: 'drones', component: DroneListComponent},
   { path: 'drones/:id', component: DroneDetailsComponent},
   { path: 'manufacturers/:id', component: ManufacturerDetailsComponent},
-  { path: 'drones-admin', component: DroneListAdminComponent},
-  { path: 'drones-add', component: DroneAddComponent},
-  { path: 'manufacturers-add', component: ManufacturerAddComponent},
-  { path: 'manufacturers-list', component: ManufacturerListComponent},
-  {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'sign-up', component: SignUpComponent}
+  { path: 'drones-admin', component: DroneListAdminComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'drones-add', component: DroneAddComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'manufacturers-add', component: ManufacturerAddComponent, canActivate: [AuthGuard, AdminGuard]},
+  { path: 'manufacturers-list', component: ManufacturerListComponent, canActivate: [AuthGuard, AdminGuard]},
+  {path: 'shopping-cart', component: ShoppingCartComponent}
 ];
 
 @NgModule({

@@ -36,6 +36,7 @@ import { ManufacturerAddComponent } from './manufacturer/manufacturer-add/manufa
 import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manufacturer-list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import {YoutubePlayerModule} from 'ngx-youtube-player';
 
 
 
@@ -80,7 +81,8 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
     MzToastModule,
     MzSelectModule,
     MzPaginationModule,
-    FormsModule
+    FormsModule,
+    YoutubePlayerModule
   ],
   providers: [TokenService,
     LoginService,

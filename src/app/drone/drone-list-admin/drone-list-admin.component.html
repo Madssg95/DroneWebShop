@@ -34,6 +34,10 @@
                 <td>ImageUrl</td>
                 <td>{{drone.imageURL}}</td>
               </tr>
+              <tr>
+                <td>UserManualUrl</td>
+                <td>{{drone.userManualURL}}</td>
+              </tr>
               </tbody>
               <tbody *ngIf="isUpdate">
               <tr>
@@ -72,6 +76,10 @@
               <tr>
                 <td>ImageUrl</td>
                 <td><input type="text" formControlName="imageURL" value="{{drone.imageURL}}"></td>
+              </tr>
+              <tr>
+              <td>UserManualUrl</td>
+              <td><input type="text" formControlName="UserManualURL" value="{{drone.userManualURL}}"></td>
               </tr>
               </tbody>
             </table>

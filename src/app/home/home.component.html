@@ -10,16 +10,37 @@
 <div class="container">
 
   <mz-card>
-    <mz-card-title style="font-size: 35px">
+    <mz-card-title style="font-size: 35px; font-weight: bold">
       We Fly 4 You
     </mz-card-title>
 
-    <mz-card-content style="font-size: larger">
-       <br> For anyone who has taken the time to manually count the number of words on a page of paper, you know it’s both time consuming and frustrating. There has to be a better way. Fortunately, word counters can easily give you the information for your own writing, but what if you need to know the exact number of words for a particular page? Getting this information is a bit more difficult.
-      There could be a number of reasons you want to know how many words are on a page. Many times it’s because you have an assignment which requires you to write a certain number of pages, so you’d like to know how many words are needed to fill a page. The problem is there’s not a definitive answer to this questions because there are so many factors that go into calculating the number of words on a page.
+
+    <mz-card-content fxLayout="column" fxLayoutAlign="center center" style="font-size: larger">
+
+       <br> WeFly4You er et professionelt dronefirma der laver foto- og videoproduktion fra luften. Med den nyeste teknologi kan vi tilbyde optimerede droneserviceløsninger
+      til alle slags behov. Vi løser alle typer af luftfoto opgaver som før i tiden blev løst af fly, helikoptere og fotokraner.
+      Dette giver optagelser med et nyt perspektiv, der ikke tidligere var muligt. Brugen af droner gør det hurtigere og billigere end andre løsninger.
+      <br>
+      <br>
+      Ud over droneservice udbyder vi også salg af droner. Vi forhandler kun de bedste mærker og til en fordelagtig pris.
+      Tag et kig i webshoppen hvis du er interesseret i ét af vores produkter eller kontakt os for et uforpligtende tilbud
+      på en service.
+
+
+      <div fxLayout="column" fxLayoutAlign="end center" style="margin-top: 5%">
+      <br> WeFly4You har fløjet for større virksomheder, som disse:
+
+      <div fxLayout="row" fxLayoutAlign="space-around center" >
+        <img style="margin-top: 4%" height="100 px" width="750 px"  src="http://funkyimg.com/i/2P7fv.png">
+
+      </div>
+
+      </div>
     </mz-card-content>
     <mz-card-action>
-      <button mz-button class="grey darken-2" fxFill="" (click)="booktid.openModal()">Book en tid nu</button>
+      <div fxLayoutAlign="center center">
+      <button mz-button class= "hoverButton blue lighten-1"  (click)="booktid.openModal()">Book en tid nu</button>
+      </div>
     </mz-card-action>
 
 
@@ -221,11 +242,13 @@
 
 
 
-<mz-modal #natur>
+<mz-modal #natur [options]="natureModalOptions">
   <mz-modal-content>
     <div style="text-align: center; margin-top: 5%">
       <h5 style="margin-bottom: 5%">Natur</h5>
       <h6> Åforløb vest for Troldhede</h6>
+
+      <youtube-player [videoId]="'AtlXmQyYx9Q'" (ready)="saveNature($event)"></youtube-player>
 
       <iframe width="560" height="315" src="https://www.youtube.com/embed/AtlXmQyYx9Q" frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
