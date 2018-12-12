@@ -4,7 +4,12 @@
      fxLayout="column">
   <div fxLayout="row wrap" *ngIf="drone" fxLayoutGap="10px">
     <div fxFlex="50">
+      <div fxLayout="column" fxLayoutAlign="center center" >
+
       <img src={{drone.imageURL}} style="vertical-align:middle; width: 600px; height: 400px;">
+        <a class="button" target="_blank" rel="noopener noreferrer" href="{{drone.userManualURL}}" style="margin-top: 5%">USER MANUAL</a>
+
+      </div>
     </div>
     <div fxFlex="40">
     <span>
@@ -36,10 +41,14 @@
           </div>
         </div>
     </div>
+
+
+<div>
+</div>
   </div>
   <div fxLayout="row wrap" *ngIf="drone">
   <div fxFlex="80">
-    <div class="card" style="margin-top: 5%; margin-left: 1%">
+    <div class="card" style="margin-top: 5%; margin-left: 1%" fxLayout="row" fxLayoutAlign="center center" >
       <div class="card-content black-text" >
     <p style="font-size: large">{{drone.details}}</p>
   </div>
