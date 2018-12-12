@@ -17,6 +17,7 @@ export class DroneListComponent implements OnInit {
   count: number;
   pageEvent: PageEvent;
   isSorted = false;
+  manufacturerId = 0;
 
   constructor(private droneService: DroneService, private manufacturerService: ManufacturerService) { }
 
@@ -30,16 +31,20 @@ export class DroneListComponent implements OnInit {
   }
 
   refresh() {
-    this.droneService.getDrones(this.pageEvent.pageIndex, this.pageEvent.pageSize, this.isSorted).subscribe(listOfDrones => {
+    this.droneService.getDrones(this.pageEvent.pageIndex, this.pageEvent.pageSize, this.isSorted, this.manufacturerId).subscribe(listOfDrones => {
       this.count = listOfDrones.count;
       this.drones = listOfDrones.list;
-      console.log(this.count);
     });
     this.manufacturerService.getManufacturers().subscribe(listOfManufacturers => (this.manufacturers = listOfManufacturers));
   }
 
   pageChange(currentPage: number) {
     this.pageEvent.pageIndex = currentPage;
+    this.refresh();
+  }
+
+  setManufacturerAndRefresh(id: number) {
+    this.manufacturerId = id;
     this.refresh();
   }
 }

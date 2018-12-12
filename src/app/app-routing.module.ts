@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'drones', component: DroneListComponent},
   { path: 'drones/:id', component: DroneDetailsComponent},
   { path: 'manufacturers/:id', component: ManufacturerDetailsComponent},
-  {path: 'sign-up', component: SignUpComponent}
+  {path: 'sign-up', component: SignUpComponent},
   { path: 'drones-admin', component: DroneListAdminComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'drones-add', component: DroneAddComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'manufacturers-add', component: ManufacturerAddComponent, canActivate: [AuthGuard, AdminGuard]},

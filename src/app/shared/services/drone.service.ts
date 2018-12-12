@@ -13,11 +13,12 @@ export class DroneService {
   constructor(private http: HttpClient) { }
 
 
-  getDrones(currentPage: number, itemsPrPage: number, isSortedByPriceDescending: boolean): Observable<FilteredDronesList> {
+  getDrones(currentPage: number, itemsPrPage: number, isSortedByPriceDescending: boolean, manufacturerId: number): Observable<FilteredDronesList> {
     const params = new HttpParams()
       .set('currentPage', currentPage.toString())
       .set('itemsPerPage', itemsPrPage.toString())
-      .set('IsSortedDescendingByPrice', String(isSortedByPriceDescending));
+      .set('IsSortedDescendingByPrice', String(isSortedByPriceDescending))
+      .set('ManufacturerId', manufacturerId.toString());
     return this.http.get<FilteredDronesList>(environment.apiUrl + 'drones', {params: params});
   }
 
