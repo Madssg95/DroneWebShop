@@ -9,7 +9,6 @@
   <li><a routerLink="/manufacturers-list" style="color: black">Rediger Fabrikant</a></li>
   <li class="divider"></li>
   <li><a routerLink="/manufacturers-add" style="color: black">Tilføj Fabrikant</a></li>
-
 </ul>
 
 
@@ -17,12 +16,12 @@
     <mz-navbar [navbarClass]="'grey darken-1'">
       <a href="#" class="brand-logo center" style="font-family: 'Allerta Stencil', Sans-serif, serif;">WeFly4You</a>
 
-      <mz-navbar-item-container [align]="'left'" [style.display]="!loggedIn ? 'block': 'none'">
+      <mz-navbar-item-container [align]="'left'" [style.display]="userRole !='Administrator' ? 'block': 'none'">
         <mz-navbar-item  ><a href="/drones">Pruduktside</a></mz-navbar-item>
 
 
       </mz-navbar-item-container>
-      <mz-navbar-item-container [align]="'left'" [style.display]="loggedIn ? 'block': 'none'">
+      <mz-navbar-item-container [align]="'left'" [style.display]="userRole =='Administrator' ? 'block': 'none'">
 
         <mz-navbar-item>
           <a href="javascript:void(0)" class="dropdown-button"  data-activates="dropdownDrones">

@@ -14,10 +14,11 @@ export class AdminGuard implements CanActivate {
     pipe(
       first(),
       map(user => {
-        if (user.IsAdmin = true) {
+        if (user.role === 'Administrator' ) {
           return true;
         } else {
           // not logged in with right role so redirect to login page with the return url
+          console.log('test');
           this.router.navigateByUrl('/denied');
           return false;
         }
