@@ -1,4 +1,5 @@
 import {Order} from './order';
+import {User} from "./user";
 
 export class Customer {
   id: number;
@@ -8,4 +9,6 @@ export class Customer {
   phoneNumber: number;
   email: string;
   orders?: Order[];
+  userId: number;
+  user?: User;
 }

@@ -65,6 +65,7 @@ export class DroneListAdminComponent implements OnInit {
       imageURL: droneFormFields.imageURL,
       manufacturer: {id: droneFormFields.manufacturer}
     };
+    debugger;
     if (drone.manufacturer.id == "") {
       drone.manufacturer.id = this.oldManufacturerID;
     }

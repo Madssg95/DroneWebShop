@@ -1,0 +1,145 @@
+<div
+  class="container"
+  fxLayout="column"
+  style="margin-top: 3%;">
+  <div fxLayout="row" fxLayoutAlign="center top">
+    <form [formGroup]="customerForm" (ngSubmit)="create()" fxLayoutAlign="center top">
+        <div fxLayout="row wrap">
+          <mz-input-container fxFlex="50">
+            <input mz-input
+                   [label]="'Brugernavn'"
+                   id="username"
+                   type="text"
+                   formControlName="username"
+                   class="form-control"
+                   name="username"
+                   [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+            >
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="f.username.errors.required" style="color: #bb0000">Indtast brugernavn</div>
+            </div>
+          </mz-input-container>
+          <mz-input-container fxFlex="50">
+            <input mz-input
+                   [label]="'Password'"
+                   id="password-input"
+                   type="password"
+                   value=""
+                   formControlName="password"
+                   class="form-control"
+                   name="password"
+                   [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+            >
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required" style="color: #bb0000">Indtast password</div>
+            </div>
+          </mz-input-container>
+          <mz-input-container fxFlex="50">
+            <input mz-input
+                   [label]="'Fornavn'"
+                   id="firstname"
+                   type="text"
+                   formControlName="firstName"
+                   class="form-control"
+                   name="firstName"
+                   [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+            >
+            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+              <div *ngIf="f.firstName.errors.required" style="color: #bb0000">Indtast fornavn</div>
+            </div>
+          </mz-input-container>
+          <mz-input-container fxFlex="50">
+            <input mz-input
+                   [label]="'Efternavn'"
+                   id="lastname"
+                   type="text"
+                   formControlName="lastName"
+                   class="form-control"
+                   name="lastName"
+                   [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+            >
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+              <div *ngIf="f.lastName.errors.required" style="color: #bb0000">Indtast efternavn</div>
+            </div>
+          </mz-input-container>
+          <mz-input-container fxFlex="100">
+            <input mz-input
+                   [label]="'Addresse'"
+                   id="address"
+                   type="text"
+                   formControlName="address"
+                   class="form-control"
+                   name="address"
+                   [ngClass]="{ 'is-invalid': submitted && f.address.errors }"
+            >
+            <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+              <div *ngIf="f.address.errors.required" style="color: #bb0000">Indtast en addresse</div>
+            </div>
+          </mz-input-container>
+          <mz-input-container fxFlex="50">
+            <input mz-input
+                   [label]="'By'"
+                   id="city"
+                   type="text"
+                   formControlName="city"
+                   class="form-control"
+                   name="city"
+                   [ngClass]="{ 'is-invalid': submitted && f.city.errors }"
+            >
+            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+              <div *ngIf="f.city.errors.required" style="color: #bb0000">Indtast en by</div>
+            </div>
+          </mz-input-container>
+          <mz-input-container fxFlex="50">
+            <input mz-input
+                   [label]="'Postnummer'"
+                   id="postalCode"
+                   type="number"
+                   length="4"
+                   formControlName="postalCode"
+                   class="form-control"
+                   name="postalCode"
+                   [ngClass]="{ 'is-invalid': submitted && f.postalCode.errors }"
+            >
+            <div *ngIf="submitted && f.postalCode.errors" class="invalid-feedback">
+              <div *ngIf="f.postalCode.errors.required" style="color: #bb0000">Indtast et postnummer</div>
+              <div *ngIf="f.postalCode.errors.minlength">Postnummeret skal have 4 cifre</div>
+            </div>
+          </mz-input-container>
+          <mz-input-container fxFlex="50">
+            <input mz-input
+                   [label]="'Email'"
+                   [validate]="true"
+                   [dataError]="'Invalid email (example@domain.com)'"
+                   [dataSuccess]="'Valid email'"
+                   id="email-input"
+                   length="150"
+                   type="email"
+                   formControlName="email"
+                   class="form-control"
+                   name="email"
+                   [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            >
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required" style="color: #bb0000">Indtast en email addresse</div>
+            </div>
+          </mz-input-container>
+          <mz-input-container fxFlex="50">
+            <input mz-input
+                   [label]="'Telefonnummer'"
+                   id="phoneNumber"
+                   type="number"
+                   formControlName="phoneNumber"
+                   class="form-control"
+                   name="phoneNumber"
+                   [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }"
+            >
+            <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+              <div *ngIf="f.phoneNumber.errors.required" style="color: #bb0000">Indtast et telefonnummer</div>
+            </div>
+          </mz-input-container>
+          <button mz-button class="green" style="float: left; margin-top: 20px">Create a new user</button>
+        </div>
+    </form>
+  </div>
+  </div>
