@@ -2,7 +2,7 @@
 
   <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="orderLines.length > 0">
     <button mz-button class="grey darken-1" style="margin-top: 6%" routerLink="/drones"><i class="material-icons left">arrow_back_ios</i>Forsæt Shopping</button>
-    <button mz-button class="grey darken-1" style="margin-top: 6%"><i class="material-icons right">arrow_forward_ios</i>Gå til checkout</button>
+    <button mz-button class="grey darken-1" style="margin-top: 6%" routerLink="/checkout"><i class="material-icons right">arrow_forward_ios</i>Gå til checkout</button>
   </div>
 
   <div class="shopping-cart" style="margin-top: 5%" *ngIf="orderLines.length > 0">
