@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   loggedIn: boolean;
   userName: string;
+  userAdminStatus: boolean;
 
   constructor(private loginService: LoginService, private tokenService: TokenService) {}
 
@@ -21,7 +22,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.subscription = this.tokenService.isLoggedIn
       .pipe(
         switchMap(isLoggedIn => {this.loggedIn = isLoggedIn; return this.tokenService.getUserFromToken(); })
-      ).subscribe(user => {this.userName = user ? user.userName : ''; });
+      ).subscribe(user => {this.userName = user ? user.userName : ''; this.userAdminStatus = user ? user.IsAdmin : false; });
+
+    console.log(this.userAdminStatus);
+    console.log(this.userName);
+    console.log(this.loggedIn);
   }
 
   ngOnDestroy(): void {
