@@ -18,17 +18,18 @@
 
       <mz-navbar-item-container [align]="'left'" [style.display]="userRole !='Administrator' ? 'block': 'none'">
         <mz-navbar-item  ><a href="/drones">Produktside</a></mz-navbar-item>
-
-
       </mz-navbar-item-container>
-      <mz-navbar-item-container [align]="'left'" [style.display]="userRole =='Administrator' ? 'block': 'none'">
 
+      <mz-navbar-item-container [align]="'left'" [style.display]="userRole =='Administrator' ? 'block': 'none'">
         <mz-navbar-item>
           <a href="javascript:void(0)" class="dropdown-button"  data-activates="dropdownDrones">
             Produktside
             <i class="material-icons right">arrow_drop_down</i>
           </a>
         </mz-navbar-item>
+      </mz-navbar-item-container>
+      <mz-navbar-item-container [align]="'left'" [style.display]="!!loggedIn ? 'block': 'none'">
+        <mz-navbar-item  ><a href="/myProfile">Min Profil</a></mz-navbar-item>
       </mz-navbar-item-container>
 
       <mz-navbar-item-container [align]="'right'">
