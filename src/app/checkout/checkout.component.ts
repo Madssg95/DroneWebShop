@@ -16,15 +16,15 @@ import {ShoppingCartService} from '../shared/services/shopping-cart.service';
 })
 export class CheckoutComponent implements OnInit {
 
-  private orders: OrderLine[];
+   orders: OrderLine[];
 
   private subscription: Subscription;
 
   private loggedIn: boolean;
-  private userName: string;
-  private userRole: string;
+   userName: string;
+   userRole: string;
 
-  private customer: Customer;
+   customer: Customer;
 
   constructor(private cartService: ShoppingCartService, private tokenService: TokenService, private userService: UserService) {}
 

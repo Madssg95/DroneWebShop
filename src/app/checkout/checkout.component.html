@@ -9,7 +9,7 @@
   <h4 style="margin-top: 4%">Dine Informationer</h4>
   <hr>
 
-  <div fxLayout="column" fxLayoutAlign="space-around start" *ngIf="userRole != 'Administrator'">
+  <div fxLayout="column" fxLayoutAlign="space-around start" *ngIf="userRole != 'Administrator' && customer">
 
     <h6 style="margin-top: 3%">Fornavn: {{customer.firstName}}</h6>
     <h6>EfterNavn: {{customer.lastName}}</h6>
