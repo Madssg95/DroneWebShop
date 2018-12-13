@@ -8,6 +8,10 @@ import {User} from '../shared/model/user';
 import {UserService} from '../shared/services/user.service';
 import {OrderLine} from '../shared/model/orderLine';
 import {ShoppingCartService} from '../shared/services/shopping-cart.service';
+import {forEach} from '@angular/router/src/utils/collection';
+import {Order} from '../shared/model/order';
+import {OrderService} from '../shared/services/order.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -16,7 +20,16 @@ import {ShoppingCartService} from '../shared/services/shopping-cart.service';
 })
 export class CheckoutComponent implements OnInit {
 
+
+  public modalOptions: Materialize.ModalOptions = {
+    dismissible: false
+
+  };
+
    orders: OrderLine[];
+   subTotal = 0;
+   customerID = new Customer();
+   message: string;
 
   private subscription: Subscription;
 
@@ -26,7 +39,7 @@ export class CheckoutComponent implements OnInit {
 
    customer: Customer;
 
-  constructor(private cartService: ShoppingCartService, private tokenService: TokenService, private userService: UserService) {}
+  constructor(private cartService: ShoppingCartService, private tokenService: TokenService, private userService: UserService, private orderService: OrderService, private router: Router) {}
 
   ngOnInit() {
     this.subscription = this.tokenService.isLoggedIn
@@ -36,6 +49,7 @@ export class CheckoutComponent implements OnInit {
      });
 
     this.orders = this.cartService.getDronesList();
+    this.subTotalCalculate();
   }
 
 
@@ -44,4 +58,43 @@ export class CheckoutComponent implements OnInit {
     });
   }
 
+  subTotalCalculate() {
+    for (let order of this.orders) {
+
+      this.subTotal = this.subTotal + (order.boughtPrice * order.qty);
+
+    }
+    console.log(this.subTotal);
+  }
+
+  createOrder() {
+
+    const order: Order = {
+      customer: {id: this.customer.id},
+      orderDate: new Date(),
+      orderLines: []
+    };
+
+    for(let orderlines of this.orders) {
+
+      order.orderLines.push({
+        droneId: orderlines.droneId,
+        qty: orderlines.qty,
+        boughtPrice: orderlines.boughtPrice
+      });
+    }
+
+    this.orderService.createOrder(order as Order).subscribe(success => {
+        this.message = 'Din ordre er modtaget. Tak for din bestilling!';
+        alert(this.message);
+        this.cartService.clearLocalStorage(this.orders);
+        this.router.navigateByUrl('/');
+      },
+      error => {
+        this.message = 'Der opstod en fejl ved din bestilling.' + error.message;
+      });
+
+
+
+  }
 }

@@ -3,12 +3,12 @@ import {Order} from './order';
 
 export class OrderLine {
 
-  droneId: number;
-  drone: Drone;
+  droneId?: number;
+  drone?: Drone;
 
-  orderId: number;
-  order: Order;
+  orderId?: number;
+  order?: Order;
 
-  qty: number;
-  boughtPrice: number;
+  qty?: number;
+  boughtPrice?: number;
 }

@@ -6,8 +6,8 @@
       <ul class="collection">
       <a class="collection-item" (click)="setManufacturerAndRefresh(0)" style="font-size: x-large; display: block">Alle modeller<i class="material-icons" style="float: right">send</i></a>
       </ul>
-        <ul class="collection" *ngFor="let manufacturer of manufacturers">
-      <a class="collection-item" (click)="setManufacturerAndRefresh(manufacturer.id)" style="font-size: x-large; display: block" >{{manufacturer.name}}<i class="material-icons" style="float: right">send</i></a>
+        <ul class="collection" >
+      <a class="collection-item" (click)="setManufacturerAndRefresh(manufacturer.id)" style="font-size: x-large; display: block" *ngFor="let manufacturer of manufacturers" >{{manufacturer.name}}<i class="material-icons" style="float: right">send</i></a>
     </ul>
     </ul>
   </div>

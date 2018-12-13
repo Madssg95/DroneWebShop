@@ -42,8 +42,11 @@ export class ShoppingCartService {
     localStorage.removeItem(String(orderline.droneId));
   }
 
-  clearLocalStorage() {
-    localStorage.clear();
+  clearLocalStorage(orderlines: OrderLine[]) {
+
+    for (let orderline of orderlines) {
+      localStorage.removeItem(String(orderline.droneId));
+    }
   }
 
   updateQtyInLocal(orderLine: OrderLine) {
