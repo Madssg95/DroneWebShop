@@ -7,25 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public natureModalOptions: Materialize.ModalOptions = {
-    ready: () => { this.playVideo(); },
-    complete: () => { this.pause(); }
-  };
-  private player: YT.Player;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
-  saveNature(player) {
-    this.player = player;
-  }
-
-  playVideo() {
-    this.player.playVideo();
-  }
-
-  pause() {
-    this.player.pauseVideo();
-  }
 }
+
