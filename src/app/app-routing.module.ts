@@ -15,6 +15,7 @@ import {ManufacturerListComponent} from "./manufacturer/manufacturer-list/manufa
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {SignUpComponent} from "./auth/sign-up/sign-up.component";
 import {AuthGuard} from './auth/guards/auth.guard';
+import {CheckoutComponent} from './checkout/checkout.component';
 
 
 
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'drones-add', component: DroneAddComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'manufacturers-add', component: ManufacturerAddComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'manufacturers-list', component: ManufacturerListComponent, canActivate: [AuthGuard, AdminGuard]},
-  {path: 'shopping-cart', component: ShoppingCartComponent}
+  {path: 'shopping-cart', component: ShoppingCartComponent},
+  {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

@@ -37,6 +37,7 @@ import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manu
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import {YoutubePlayerModule} from 'ngx-youtube-player';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 
@@ -57,7 +58,8 @@ import {YoutubePlayerModule} from 'ngx-youtube-player';
     ManufacturerAddComponent,
     ManufacturerListComponent,
     ShoppingCartComponent,
-    SignUpComponent
+    SignUpComponent,
+    CheckoutComponent
   ],
 
   imports: [
