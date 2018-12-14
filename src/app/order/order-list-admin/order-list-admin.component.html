@@ -1,0 +1,49 @@
+<div class="container"
+     fxLayout="column"
+     fxFlex="50"
+     fxLayoutGap="30px">
+  <div fxLayout="row wrap" *ngIf="orders">
+    <mz-collapsible fxFlex="100" fxLayoutAlign="center center" fxFill="100">
+      <mz-collapsible-item *ngFor="let order of orders">
+        <mz-collapsible-item-header style="font-size: large">Order Id: {{order.id}} -  Customer Name: {{order.customer.firstName}} {{order.customer.lastName}} - Order Date: {{order.orderDate}}</mz-collapsible-item-header>
+        <mz-collapsible-item-body>
+            <table class="striped">
+              <tbody>
+              <tr>
+                <td>Id</td>
+                <td style="text-align: center">{{order.id}}</td>
+              </tr>
+              <tr>
+                <td>Customer Firstname</td>
+                <td style="text-align: center">{{order.customer.firstName}}</td>
+              </tr>
+              <tr>
+                <td>Customer Lastname</td>
+                <td style="text-align: center">{{order.customer.lastName}}</td>
+              </tr>
+              <tr>
+                <td>Order Date</td>
+                <td style="text-align: center">{{order.orderDate}}</td>
+              </tr>
+              <tr >
+                <td>Orderlines</td>
+                <td></td>
+              </tr>
+              <tr *ngFor="let orderline of order.orderLines">
+                <td>{{orderline.drone.productName}}</td>
+                <td style="text-align: center">Price: {{orderline.boughtPrice}} Quantity: {{orderline.qty}}</td>
+              </tr>
+              </tbody>
+            </table>
+          <div class="buttons">
+            <button (click)="refresh()" mz-button [float]="true" class="blue"><i class="material-icons">cancel</i></button>
+            <span class="right">
+            <button (click)="delete(order.id)" mz-button [float]="true" class="red"><i class="material-icons">delete</i></button>
+          </span>
+          </div>
+        </mz-collapsible-item-body>
+      </mz-collapsible-item>
+    </mz-collapsible>
+  </div>
+</div>
+

@@ -16,6 +16,7 @@ import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {SignUpComponent} from "./auth/sign-up/sign-up.component";
 import {AuthGuard} from './auth/guards/auth.guard';
 import {CheckoutComponent} from './checkout/checkout.component';
+import {OrderListAdminComponent} from "./order/order-list-admin/order-list-admin.component";
 
 
 
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'manufacturers-add', component: ManufacturerAddComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'manufacturers-list', component: ManufacturerListComponent, canActivate: [AuthGuard, AdminGuard]},
   {path: 'shopping-cart', component: ShoppingCartComponent},
-  {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard]}
+  {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard]},
+  {path: 'orders', component: OrderListAdminComponent, canActivate: [AuthGuard, AdminGuard]}
 ];
 
 @NgModule({
