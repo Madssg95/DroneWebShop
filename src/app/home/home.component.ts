@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {packagesService} from '../shared/services/packages.service';
+import {Packages} from '../shared/model/packages';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  packagesList: Packages[]
 
-  constructor() {
+  constructor(private packageService: packagesService) {
   }
 
   ngOnInit() {
+
+    this.packageService.getPackages().subscribe(retrievedPackages => {this.packagesList = retrievedPackages;});
   }
 }
 
