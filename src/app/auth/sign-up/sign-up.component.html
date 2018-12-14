@@ -2,6 +2,9 @@
   class="container"
   fxLayout="column"
   style="margin-top: 3%;">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <button mz-button class="grey darken-1" style="margin-top: 1%" routerLink="/login"><i class="material-icons left">arrow_back_ios</i>Tilbage til login</button>
+  </div>
   <div fxLayout="row" fxLayoutAlign="center top">
     <form [formGroup]="customerForm" (ngSubmit)="create()" fxLayoutAlign="center top">
         <div fxLayout="row wrap">

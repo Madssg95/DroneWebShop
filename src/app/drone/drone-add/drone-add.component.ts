@@ -44,7 +44,7 @@ export class DroneAddComponent implements OnInit {
       details: droneFormFields.details,
       imageURL: droneFormFields.imageURL,
       userManualURL: droneFormFields.userManualURL,
-      manufacturer: {name: droneFormFields.manufacturer},
+      manufacturer: {id: droneFormFields.manufacturer},
     };
 
     this.droneService.createDrone(drone as Drone).subscribe(() => {

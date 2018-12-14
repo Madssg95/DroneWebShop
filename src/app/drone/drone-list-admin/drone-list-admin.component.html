@@ -8,7 +8,7 @@
         <mz-collapsible-item-header style="font-size: large">Drone Id: {{drone.id}} -  Drone Name: {{drone.manufacturer.name}} {{drone.productName}}</mz-collapsible-item-header>
         <mz-collapsible-item-body>
           <form [formGroup]="droneForm" (ngSubmit)="update()">
-            <table class="striped">
+            <table class="striped" *ngIf="manufacturers">
               <tbody *ngIf="!isUpdate">
               <tr>
                 <td>Id</td>
@@ -79,7 +79,7 @@
               </tr>
               <tr>
               <td>UserManualUrl</td>
-              <td><input type="text" formControlName="UserManualURL" value="{{drone.userManualURL}}"></td>
+              <td><input type="text" formControlName="userManualURL" value="{{drone.userManualURL}}"></td>
               </tr>
               </tbody>
             </table>

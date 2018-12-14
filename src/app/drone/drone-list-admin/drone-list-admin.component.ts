@@ -23,6 +23,7 @@ export class DroneListAdminComponent implements OnInit {
     price: new FormControl(''),
     details: new FormControl(''),
     imageURL: new FormControl(''),
+    userManualURL: new FormControl(''),
     manufacturer: new FormControl('')
   });
 
@@ -45,7 +46,8 @@ export class DroneListAdminComponent implements OnInit {
       productName: droneUpdate.productName,
       price: droneUpdate.price,
       details: droneUpdate.details,
-      imageURL: droneUpdate.imageURL
+      imageURL: droneUpdate.imageURL,
+      userManualURL: droneUpdate.userManualURL
     });
     this.oldManufacturerID = droneUpdate.manufacturer.id;
 
@@ -63,6 +65,7 @@ export class DroneListAdminComponent implements OnInit {
       price: droneFormFields.price,
       details: droneFormFields.details,
       imageURL: droneFormFields.imageURL,
+      userManualURL: droneFormFields.userManualURL,
       manufacturer: {id: droneFormFields.manufacturer}
     };
     debugger;
