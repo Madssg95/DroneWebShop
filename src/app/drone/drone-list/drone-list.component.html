@@ -45,10 +45,10 @@
           <div fxLayout="column" fxLayoutAlign="space-between center" >
           <div class="card-image">
             <img src={{drone.imageURL}}>
-            <span class="card-title">{{drone.manufacturer}}</span>
+            <span class="card-title">{{drone.manufacturer.name}} {{drone.productName}}</span>
           </div>
           <div class="card-content" style="width:360px;height: 170px">
-            <p style="text-align: center; font-size: x-large">{{drone.productName}}</p>
+            <p style="text-align: center; font-size: x-large">{{drone.manufacturer.name}} {{drone.productName}}</p>
             <br>
             <p style="text-align: center; font-size: larger">DKK {{drone.price}},-</p>
           </div>
