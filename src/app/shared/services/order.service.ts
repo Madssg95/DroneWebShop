@@ -17,6 +17,6 @@ export class OrderService {
   }
 
   deleteOrder(id: number): Observable<Order> {
-    return this.http.delete(environment.apiUrl + 'orders/' + id);
+    return this.http.delete<Order>(environment.apiUrl + 'orders/' + id);
   }
 }
