@@ -11,6 +11,9 @@
   <li><a routerLink="/manufacturers-add" style="color: black">Tilføj Fabrikant</a></li>
 </ul>
 
+<ul id="dropdownOrders" class="dropdown-content" style="margin-top: 3.3%;">
+<li><a routerLink="/orders" style="color: black">Se ordre</a></li>
+</ul>
 
 <div class="col s12">
     <mz-navbar [navbarClass]="'grey darken-1'">
@@ -24,6 +27,13 @@
         <mz-navbar-item>
           <a href="javascript:void(0)" class="dropdown-button"  data-activates="dropdownDrones">
             Produktside
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </mz-navbar-item>
+
+        <mz-navbar-item>
+          <a href="javascript:void(0)" class="dropdown-button"  data-activates="dropdownOrders">
+            Ordre
             <i class="material-icons right">arrow_drop_down</i>
           </a>
         </mz-navbar-item>

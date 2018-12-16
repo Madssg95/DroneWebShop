@@ -3,7 +3,6 @@ import {HttpClient} from '@angular/common/http';
 import {Order} from '../model/order';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
-import {FilteredDronesList} from '../model/filteredDronesList';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +17,9 @@ export class OrderService {
 
   deleteOrder(id: number): Observable<Order> {
     return this.http.delete<Order>(environment.apiUrl + 'orders/' + id);
+  }
+
+  getOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(environment.apiUrl + 'orders');
   }
 }
