@@ -4,10 +4,9 @@
      fxLayout="column">
   <div fxLayout="row wrap" *ngIf="drone" fxLayoutGap="10px">
     <div fxFlex="50">
-      <div fxLayout="column" fxLayoutAlign="center center" >
+      <div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 10%" >
 
       <img src={{drone.imageURL}} style="vertical-align:middle; width: 600px; height: 400px;">
-        <a class="button" target="_blank" rel="noopener noreferrer" href="{{drone.userManualURL}}" style="margin-top: 5%">USER MANUAL</a>
 
       </div>
     </div>
@@ -32,12 +31,13 @@
               <div class="col-6 offset-3">
                 <mz-input-container [inline]="true">
                   <input mz-input [label]="'Quantity'" id="inline-input" type="number" min="1" max="10" style="text-align: center" [(ngModel)]="qty">
+
                 </mz-input-container>
               </div>
             </div>
           </div>
           <div class="collection" style="margin-top: 5%">
-            <a href="javascript:void(0)" class="collection-item" (click)="addToCart(drone)">Add to cart<i class="material-icons" style="float: right">add_shopping_cart</i></a>
+            <a href="javascript:void(0)" style="color: black" class="collection-item" (click)="addToCart(drone)">Tilføj til Kurv<i class="material-icons" style="float: right">add_shopping_cart</i></a>
           </div>
         </div>
     </div>
@@ -47,10 +47,11 @@
 </div>
   </div>
   <div fxLayout="row wrap" *ngIf="drone">
-  <div fxFlex="80">
+  <div fxFlex="91">
     <div class="card" style="margin-top: 5%; margin-left: 1%" fxLayout="row" fxLayoutAlign="center center" >
       <div class="card-content black-text" >
-    <p style="font-size: large">{{drone.details}}</p>
+        <a class="button" target="_blank" rel="noopener noreferrer" href="{{drone.userManualURL}}" style="margin-top: 20px">BRUGERMANUAL</a>
+        <p style="font-size: large; margin-top: 2%">{{drone.details}}</p>
   </div>
     </div>
   </div>

@@ -59,17 +59,17 @@
     <mz-collapsible fxFlexFill [mode]="'expandable'">
       <mz-collapsible-item *ngFor="let order of  customerOrders">
         <mz-collapsible-item-header>
-
-            <div fxLayout="row" fxLayoutAlign="start center" >
+          <div fxLayout="row" fxLayoutAlign="start center" >
             <h6>OrderID: {{order.id}}</h6>
             <h6 style="margin-left: 10%">OrderDate: {{order.orderDate}}</h6>
-            </div>
+            <button mz-button class="red" (click)="RemoveOrder(order.id)" >Afmeld</button>
+          </div>
         </mz-collapsible-item-header>
         <mz-collapsible-item-body>
-          <mz-card *ngFor="let orderLine of order.orderLines">
-            <mz-card-content>
-              <div fxLayout="row" fxLayoutAlign="space-between center">
-                <img src="{{orderLine.drone.imageURL}}" style="width: 150px; height: 150px; object-fit: cover; border-color: gray">
+
+          <div *ngFor="let orderLine of order.orderLines">
+              <div fxLayout="row" fxLayoutAlign="space-between center" >
+                <img src="{{orderLine.drone.imageURL}}" style="width: 200px; height: 200px; object-fit: cover; border-color: gray">
                 <div>
                   <h6>Produkt: {{orderLine.drone.productName}}</h6>
                   <h6>Fabrikant: {{orderLine.drone.manufacturer.name}}</h6>
@@ -85,13 +85,10 @@
                     <h6>Pris: {{orderLine.qty * orderLine.boughtPrice}}</h6>
                   </div>
                 </mz-input-container>
-
               </div>
-            </mz-card-content>
-            <mz-card-action>
+            <hr>
+          </div>
 
-            </mz-card-action>
-          </mz-card>
         </mz-collapsible-item-body>
       </mz-collapsible-item>
     </mz-collapsible>

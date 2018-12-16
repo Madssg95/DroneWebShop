@@ -69,4 +69,7 @@ export class MyProfileComponent implements OnInit {
   }
 
 
+  RemoveOrder(id: number) {
+    this.orderService.deleteOrder(id).subscribe(deletedOrder => this.getCustomerById(this.customer.id));
+  }
 }
