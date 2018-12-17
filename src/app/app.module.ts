@@ -37,6 +37,8 @@ import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manu
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { OrderListAdminComponent } from './order/order-list-admin/order-list-admin.component';
 
 
 
@@ -58,7 +60,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ManufacturerListComponent,
     ShoppingCartComponent,
     SignUpComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    MyProfileComponent,
+    OrderListAdminComponent
   ],
 
   imports: [

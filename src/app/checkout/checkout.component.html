@@ -17,7 +17,7 @@
     <h6>Mobilnummer: {{customer.phoneNumber}}</h6>
     <h6>Addresse: {{customer.address}}</h6>
 
-    <button mz-button class="grey darken-1" style="margin-top: 3%">Opdater min info</button>
+    <button mz-button class="grey darken-1" style="margin-top: 3%" routerLink="/myProfile">Opdater min info</button>
   </div>
   <div *ngIf="userRole === 'Administrator'" style="margin-top: 2%">
     <h5>Du er Adminstrator</h5>

@@ -1,0 +1,102 @@
+<div class="container">
+
+  <h4 style="margin-top: 4%">Dine Informationer</h4>
+  <hr>
+
+  <div fxLayout="column" fxLayoutAlign="space-around start" *ngIf="userRole != 'Administrator' && customer">
+
+    <div *ngIf="!isUpdating" style="margin-top: 3%">
+    <h6 style="margin-top: 3%">Fornavn: {{customer.firstName}}</h6>
+    <h6>EfterNavn: {{customer.lastName}}</h6>
+    <h6>Email: {{customer.email}}</h6>
+    <h6>Mobilnummer: {{customer.phoneNumber}}</h6>
+    <h6>Addresse: {{customer.address}}</h6>
+
+    <button mz-button [float]="true" class="blue" style="margin-top: 4%" (click)="isUpdating = true"><i class="material-icons">edit</i></button>
+    </div>
+
+    <div *ngIf="isUpdating" style="margin-top: 3%">
+
+      <mz-input-container>
+        <input mz-input [label]="'Fornavn'" [(ngModel)]="customer.firstName">
+      </mz-input-container>
+
+      <mz-input-container>
+       <input mz-input [label]="'Efternavn'" [(ngModel)]="customer.lastName">
+      </mz-input-container>
+
+      <mz-input-container>
+        <input mz-input [label]="'Email'" [(ngModel)]="customer.email">
+      </mz-input-container>
+
+      <mz-input-container>
+        <input mz-input [label]="'Mobilnummer'"[(ngModel)]="customer.phoneNumber">
+
+      </mz-input-container>
+      <mz-input-container>
+        <input mz-input [label]="'Addresse'" [(ngModel)]="customer.address" size="50">
+      </mz-input-container>
+
+        <div fxLayout="row" fxLayoutAlign="start start" >
+          <button mz-button [float]="true" class="red" (click)="resetCustomerInfo()" ><i class="material-icons">cancel</i></button>
+          <button mz-button [float]="true" class="green" (click)="updateCustomerInfo()" style="margin-left: 2%"><i class="material-icons">check</i></button>
+        </div>
+
+
+    </div>
+  </div>
+  <div *ngIf="userRole === 'Administrator'" style="margin-top: 2%">
+    <h5>Du er Adminstrator</h5>
+  </div>
+
+
+  <h4 style="margin-top: 4%">Dine Ordrer</h4>
+  <hr>
+
+
+  <div fxLayout="column" fxLayoutAlign="space-around center" style="margin-top: 2%" >
+
+    <mz-collapsible fxFlexFill [mode]="'expandable'">
+      <mz-collapsible-item *ngFor="let order of  customerOrders">
+        <mz-collapsible-item-header>
+          <div fxLayout="row" fxLayoutAlign="start center" >
+            <h6>OrderID: {{order.id}}</h6>
+            <h6 style="margin-left: 10%">OrderDate: {{order.orderDate}}</h6>
+            <button mz-button class="red" (click)="RemoveOrder(order.id)" >Afmeld</button>
+          </div>
+        </mz-collapsible-item-header>
+        <mz-collapsible-item-body>
+
+          <div *ngFor="let orderLine of order.orderLines">
+              <div fxLayout="row" fxLayoutAlign="space-between center" >
+                <img src="{{orderLine.drone.imageURL}}" style="width: 200px; height: 200px; object-fit: cover; border-color: gray">
+                <div>
+                  <h6>Produkt: {{orderLine.drone.productName}}</h6>
+                  <h6>Fabrikant: {{orderLine.drone.manufacturer.name}}</h6>
+                  <h6>Pris: {{orderLine.drone.price}} DKK</h6>
+                </div>
+                <mz-input-container>
+                  <div>
+                    <h6>{{orderLine.qty}} stk</h6>
+                  </div>
+                </mz-input-container>
+                <mz-input-container>
+                  <div>
+                    <h6>Pris: {{orderLine.qty * orderLine.boughtPrice}}</h6>
+                  </div>
+                </mz-input-container>
+              </div>
+            <hr>
+          </div>
+
+        </mz-collapsible-item-body>
+      </mz-collapsible-item>
+    </mz-collapsible>
+
+  </div>
+
+
+
+
+
+  </div>
