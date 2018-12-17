@@ -2,6 +2,9 @@
 <div class="container"
      style="background: white"
      fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <button mz-button class="grey darken-1" style="margin-top: 3px" routerLink="/drones"><i class="material-icons left">arrow_back_ios</i>Alle droner</button>
+  </div>
   <div fxLayout="row wrap" *ngIf="drone" fxLayoutGap="10px">
     <div fxFlex="50">
       <div fxLayout="column" fxLayoutAlign="center center" style="margin-top: 10%" >
