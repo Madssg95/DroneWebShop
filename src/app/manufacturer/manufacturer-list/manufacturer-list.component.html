@@ -3,9 +3,9 @@
      fxFlex="50"
      fxLayoutGap="30px">
   <div fxLayout="row wrap" *ngIf="manufacturers">
-    <mz-collapsible fxFlex="100" fxLayoutAlign="center center" fxFill="100">
+    <mz-collapsible fxFlex="100" fxLayoutAlign="center center" fxFlexFill>
       <mz-collapsible-item *ngFor="let manufacturer of manufacturers">
-        <mz-collapsible-item-header style="font-size: large">Manufacturer Id: {{manufacturer.id}} -  Manufacturer Name: {{manufacturer.name}}</mz-collapsible-item-header>
+        <mz-collapsible-item-header style="font-size: large;"  >Fabrikant Id: {{manufacturer.id}} -  Fabrikant navn: {{manufacturer.name}}</mz-collapsible-item-header>
         <mz-collapsible-item-body>
           <form [formGroup]="manufacturerForm" (ngSubmit)="update()">
             <table class="striped">
@@ -15,11 +15,11 @@
                 <td >{{manufacturer.id}}</td>
               </tr>
               <tr>
-                <td>Manufacturer Name</td>
+                <td>Fabrikant navn</td>
                 <td >{{manufacturer.name}}</td>
               </tr>
               <tr>
-                <td>Drones </td>
+                <td>Droner </td>
                 <td> </td>
               </tr>
               <tr *ngFor="let drone of manufacturer.drones">
@@ -33,7 +33,7 @@
                 <td>{{manufacturer.id}}</td>
               </tr>
               <tr>
-                <td>Manufacturer Name</td>
+                <td>Fabrikant navn</td>
                 <td><input type="text" formControlName="name" value="{{manufacturer.name}}"></td>
               </tr>
               </tbody>

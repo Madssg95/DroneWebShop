@@ -6,32 +6,32 @@
   <table class="striped">
   <tbody>
   <tr>
-    <td>Productname</td>
-    <td><input type="text" formControlName="productName" placeholder="Enter Productname" required></td>
+    <td>Produktnavn</td>
+    <td><input type="text" formControlName="productName" placeholder="Produktnavn" required></td>
   </tr>
   <tr>
-    <td>Details</td>
-    <td><input type="text" formControlName="details" placeholder="Enter Details" required></td>
+    <td>Detailer</td>
+    <td><input type="text" formControlName="details" placeholder="Detailer" required></td>
   </tr>
   <tr>
-    <td>Price</td>
-    <td><input type="number" formControlName="price" placeholder="Enter Price" required></td>
+    <td>Pris</td>
+    <td><input type="number" formControlName="price" placeholder="Pris" required></td>
   </tr>
   <tr>
-    <td>ImageUrl</td>
-    <td><input type="url" formControlName="imageURL" placeholder="Enter ImageUrl" required></td>
+    <td>BilledeUrl</td>
+    <td><input type="url" formControlName="imageURL" placeholder="BilledeUrl" required></td>
   </tr>
   <tr>
     <td>UserManualUrl</td>
-    <td><input type="url" formControlName="userManualURL" placeholder="Enter UserManualUrl" required></td>
+    <td><input type="url" formControlName="userManualURL" placeholder="UserManualUrl" required></td>
   </tr>
   <tr *ngIf="!isNewManufacturer">
     <td>Existing Manufacturer</td>
     <mz-select-container>
       <select mz-select
               id="manufacturer"
-              [label]="'Manufacturer'"
-              [placeholder]="'Select Manufacturer'"
+              [label]="'Fabrikant'"
+              [placeholder]="'Vælg fabrikant'"
               [formControlName]="'manufacturer'"
       >
         <option *ngFor="let manufacturer of manufacturers" [value]="manufacturer.id">{{manufacturer.name}}</option>
@@ -39,12 +39,12 @@
     </mz-select-container>
   </tr>
   <tr *ngIf="isNewManufacturer">
-    <td>New Manufacturer</td>
-    <td><input type="text" formControlName="manufacturer" placeholder="Enter The Manufacturer Name" required></td>
+    <td>Ny fabrikant</td>
+    <td><input type="text" formControlName="manufacturer" placeholder="Indtast fabrikantens navn" required></td>
   </tr>
   </tbody>
 </table>
-      <button mz-button class="green" style="float: right; margin-top: 20px">Create a new drone</button>
+      <button mz-button class="green" style="float: right; margin-top: 20px">Opret en ny drone</button>
     </form>
 </div>
   <div fxLayout="row" fxLayoutAlign="center top">
@@ -52,10 +52,10 @@
   <table class="striped">
     <tbody>
     <tr>
-      <td>Manufacturer</td>
+      <td>Fabrikant</td>
       <td>
-        <button *ngIf="isNewManufacturer" (click)="setIsNewManufacturer(false)" mz-button class="blue">Choose existing manufacturer</button>
-        <button *ngIf="!isNewManufacturer" (click)="setIsNewManufacturer(true)" mz-button class="blue">Create new manufacturer</button>
+        <button *ngIf="isNewManufacturer" (click)="setIsNewManufacturer(false)" mz-button class="blue">Vælg existerende fabrikant</button>
+        <button *ngIf="!isNewManufacturer" (click)="setIsNewManufacturer(true)" mz-button class="blue">Opret en ny fabrikant</button>
       </td>
     </tr>
     </tbody>
