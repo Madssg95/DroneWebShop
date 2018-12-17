@@ -1,15 +1,17 @@
 <div class="container">
-
+  <div class="spinner" style="text-align: center;" *ngIf="!orders">
+    <mz-spinner color="green"></mz-spinner>
+  </div>
   <div fxLayout="row" fxLayoutAlign="space-between center" style="margin-top: 6%">
     <button mz-button class="grey darken-1" routerLink="/shopping-cart" ><i class="material-icons left">arrow_back_ios</i>Inkøbskurv</button>
-    <button mz-button class="grey darken-1" (click)="confirmOrderModal.openModal()"><i class="material-icons right">arrow_forward_ios</i>Bestil</button>
+    <button mz-button class="grey darken-1" (click)="confirmOrderModal.openModal()" [style.display]="userRole !='Administrator' ? 'block': 'none'"><i class="material-icons right">arrow_forward_ios</i>Bestil</button>
   </div>
 
 
   <h4 style="margin-top: 4%">Dine Informationer</h4>
   <hr>
 
-  <div fxLayout="column" fxLayoutAlign="space-around start" *ngIf="userRole != 'Administrator' && customer">
+  <div fxLayout="column" fxLayoutAlign="space-around start" *ngIf="userRole != 'Administrator' && customer && orders">
 
     <h6 style="margin-top: 3%">Fornavn: {{customer.firstName}}</h6>
     <h6>EfterNavn: {{customer.lastName}}</h6>

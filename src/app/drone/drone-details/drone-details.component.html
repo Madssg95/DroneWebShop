@@ -2,7 +2,10 @@
 <div class="container"
      style="background: white"
      fxLayout="column">
-  <div fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="spinner" style="text-align: center;" *ngIf="!drone">
+    <mz-spinner color="green"></mz-spinner>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="drone">
     <button mz-button class="grey darken-1" style="margin-top: 3px" routerLink="/drones"><i class="material-icons left">arrow_back_ios</i>Alle droner</button>
   </div>
   <div fxLayout="row wrap" *ngIf="drone" fxLayoutGap="10px">
