@@ -1,5 +1,5 @@
 export class Packages {
-  id: number;
+  id?: number;
   description: string;
   price: string;
 }
