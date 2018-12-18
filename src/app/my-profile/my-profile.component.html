@@ -61,7 +61,7 @@
         <mz-collapsible-item-header>
           <div fxLayout="row" fxLayoutAlign="start center" >
             <h6>OrderID: {{order.id}}</h6>
-            <h6 style="margin-left: 10%">OrderDate: {{order.orderDate}}</h6>
+            <h6 style="margin-left: 10%">OrderDate: {{order.orderDate | date:'dd/MM/yyyy'}}</h6>
             <button mz-button class="red" (click)="RemoveOrder(order.id)" >Afmeld</button>
           </div>
         </mz-collapsible-item-header>
