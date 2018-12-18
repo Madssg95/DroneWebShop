@@ -33,7 +33,6 @@ import {AdminGuard} from './auth/guards/admin.guard';
 import { DroneListAdminComponent } from './drone/drone-list-admin/drone-list-admin.component';
 import { DroneAddComponent } from './drone/drone-add/drone-add.component';
 import { ManufacturerAddComponent } from './manufacturer/manufacturer-add/manufacturer-add.component';
-import { ManufacturerListComponent } from './manufacturer/manufacturer-list/manufacturer-list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -57,7 +56,6 @@ import { OrderListAdminComponent } from './order/order-list-admin/order-list-adm
     DroneListAdminComponent,
     DroneAddComponent,
     ManufacturerAddComponent,
-    ManufacturerListComponent,
     ShoppingCartComponent,
     SignUpComponent,
     CheckoutComponent,

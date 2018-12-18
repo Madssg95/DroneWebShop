@@ -11,7 +11,6 @@ import {ManufacturerDetailsComponent} from './manufacturer/manufacturer-details/
 import {DroneListAdminComponent} from "./drone/drone-list-admin/drone-list-admin.component";
 import {DroneAddComponent} from "./drone/drone-add/drone-add.component";
 import {ManufacturerAddComponent} from "./manufacturer/manufacturer-add/manufacturer-add.component";
-import {ManufacturerListComponent} from "./manufacturer/manufacturer-list/manufacturer-list.component";
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {SignUpComponent} from "./auth/sign-up/sign-up.component";
 import {AuthGuard} from './auth/guards/auth.guard';
@@ -35,7 +34,6 @@ const routes: Routes = [
   { path: 'drones-admin', component: DroneListAdminComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'drones-add', component: DroneAddComponent, canActivate: [AuthGuard, AdminGuard]},
   { path: 'manufacturers-add', component: ManufacturerAddComponent, canActivate: [AuthGuard, AdminGuard]},
-  { path: 'manufacturers-list', component: ManufacturerListComponent, canActivate: [AuthGuard, AdminGuard]},
   {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard]},
   {path: 'myProfile', component: MyProfileComponent, canActivate: [AuthGuard]},
