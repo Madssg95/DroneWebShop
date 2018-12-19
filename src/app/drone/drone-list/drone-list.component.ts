@@ -31,11 +31,16 @@ export class DroneListComponent implements OnInit {
   }
 
   refresh() {
-    this.droneService.getDrones(this.pageEvent.pageIndex, this.pageEvent.pageSize, this.isSorted, this.manufacturerId).subscribe(listOfDrones => {
+    this.droneService.getDrones(this.pageEvent.pageIndex,
+      this.pageEvent.pageSize,
+      this.isSorted,
+      this.manufacturerId)
+      .subscribe(listOfDrones => {
       this.count = listOfDrones.count;
       this.drones = listOfDrones.list;
     });
-    this.manufacturerService.getManufacturers().subscribe(listOfManufacturers => (this.manufacturers = listOfManufacturers));
+    this.manufacturerService.getManufacturers()
+      .subscribe(listOfManufacturers => (this.manufacturers = listOfManufacturers));
   }
 
   pageChange(currentPage: number) {

@@ -1,15 +1,24 @@
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Packages} from '../model/packages';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
 import {Injectable} from '@angular/core';
+import {TokenService} from './token.service';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization': 'my-auth-token'
+  })
+};
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PackagesService {
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, private tokenServive: TokenService) { }
 
   getPackages(): Observable<Packages[]> {
     return this.http.get<Packages[]>(environment.apiUrl + 'package');
@@ -20,14 +29,20 @@ export class PackagesService {
   }
 
   createPackage(packages: Packages): Observable<Packages> {
-    return this.http.post<Packages>(environment.apiUrl + 'package', packages);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.tokenServive.getToken());
+
+    return this.http.post<Packages>(environment.apiUrl + 'package', packages, httpOptions);
   }
 
   updatePackage(packages: Packages): Observable<Packages> {
-    return this.http.put<Packages>(environment.apiUrl + 'package/' + packages.id, packages);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.tokenServive.getToken());
+
+    return this.http.put<Packages>(environment.apiUrl + 'package/' + packages.id, packages, httpOptions);
   }
 
   deletePackage(id: number): Observable<any> {
-    return this.http.delete(environment.apiUrl + 'package/' + id);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.tokenServive.getToken());
+
+    return this.http.delete(environment.apiUrl + 'package/' + id, httpOptions);
   }
 }

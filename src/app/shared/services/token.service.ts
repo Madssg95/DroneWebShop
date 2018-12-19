@@ -11,7 +11,7 @@ export class TokenService {
   constructor() {}
 
   public getToken(): string {
-    return localStorage.getItem('token');
+    return JSON.parse(localStorage.getItem('token')).token;
   }
 
   public setToken(token: string) {

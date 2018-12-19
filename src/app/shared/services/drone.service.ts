@@ -1,19 +1,32 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpHandler, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Drone} from '../model/drone';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
 import {FilteredDronesList} from "../model/filteredDronesList";
+import {TokenService} from './token.service';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization': 'my-auth-token'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class DroneService {
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient, private tokenServive: TokenService) { }
 
 
-  getDrones(currentPage: number, itemsPrPage: number, isSortedByPriceDescending: boolean, manufacturerId: number): Observable<FilteredDronesList> {
+  getDrones(currentPage: number, itemsPrPage: number,
+            isSortedByPriceDescending: boolean,
+            manufacturerId: number): Observable<FilteredDronesList> {
+
     const params = new HttpParams()
       .set('currentPage', currentPage.toString())
       .set('itemsPerPage', itemsPrPage.toString())
@@ -27,19 +40,23 @@ export class DroneService {
   }
 
   getDroneById(id: number): Observable<Drone> {
-    return this.http.get<Drone>(environment.apiUrl + 'drones/' + id);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.tokenServive.getToken());
+    return this.http.get<Drone>(environment.apiUrl + 'drones/' + id, httpOptions);
   }
 
   updateDrones(drone: Drone): Observable<Drone> {
-    return this.http.put<Drone>(environment.apiUrl + 'drones/' + drone.id, drone);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.tokenServive.getToken());
+    return this.http.put<Drone>(environment.apiUrl + 'drones/' + drone.id, drone, httpOptions);
   }
 
   deleteDrone(id: number): Observable<any> {
-    return this.http.delete(environment.apiUrl + 'drones/' + id);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.tokenServive.getToken());
+    return this.http.delete(environment.apiUrl + 'drones/' + id, httpOptions);
   }
 
   createDrone(drone: Drone): Observable<Drone> {
-    return this.http.post<Drone>(environment.apiUrl + 'drones', drone);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.tokenServive.getToken());
+    return this.http.post<Drone>(environment.apiUrl + 'drones', drone, httpOptions);
   }
 }
 
