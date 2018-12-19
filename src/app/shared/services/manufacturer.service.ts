@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs";
 import {Manufacturer} from "../model/manufacturer";
-import {environment} from "../../../environments/environment";
+import {environment} from "../../../environments/environment.prod";
 import {TokenService} from './token.service';
 
 

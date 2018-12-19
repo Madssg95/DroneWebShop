@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHandler, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Drone} from '../model/drone';
 import {Observable} from 'rxjs';
-import {environment} from '../../../environments/environment';
+import {environment} from '../../../environments/environment.prod';
 import {FilteredDronesList} from "../model/filteredDronesList";
 import {TokenService} from './token.service';
 

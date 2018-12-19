@@ -1,7 +1,7 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Packages} from '../model/packages';
 import {Observable} from 'rxjs';
-import {environment} from '../../../environments/environment';
+import {environment} from '../../../environments/environment.prod';
 import {Injectable} from '@angular/core';
 import {TokenService} from './token.service';
 
