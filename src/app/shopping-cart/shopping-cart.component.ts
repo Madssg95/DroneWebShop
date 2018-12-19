@@ -10,7 +10,7 @@ import {OrderLine} from '../shared/model/orderLine';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  private orderLines: OrderLine[];
+  public orderLines: OrderLine[];
 
   constructor(private shoppingcartService: ShoppingCartService) { }
 

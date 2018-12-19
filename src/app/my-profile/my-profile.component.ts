@@ -20,11 +20,11 @@ export class MyProfileComponent implements OnInit {
 
   private userName: string;
   private loggedIn: boolean;
-  private userRole: string;
+  public userRole: string;
   private subscription: Subscription;
-  private customer: Customer;
+  public customer: Customer;
   private oldCustomer: Customer;
-  private customerOrders: Order[];
+  public customerOrders: Order[];
 
   isUpdating: boolean;
 

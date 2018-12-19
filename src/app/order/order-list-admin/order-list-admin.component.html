@@ -5,7 +5,7 @@
   <div fxLayout="row wrap" *ngIf="orders">
     <mz-collapsible fxFlex="100" fxLayoutAlign="center center" fxFill="100">
       <mz-collapsible-item *ngFor="let order of orders">
-        <mz-collapsible-item-header style="font-size: large">Order Id: {{order.id}} -  Customer Name: {{order.customer.firstName}} {{order.customer.lastName}} - Order Date: {{order.orderDate}}</mz-collapsible-item-header>
+        <mz-collapsible-item-header style="font-size: large">Ordre Id: {{order.id}} -  Kunde navn: {{order.customer.firstName}} {{order.customer.lastName}} - Ordre dato: {{order.orderDate}}</mz-collapsible-item-header>
         <mz-collapsible-item-body>
             <table class="striped">
               <tbody>
@@ -14,19 +14,19 @@
                 <td style="text-align: center">{{order.id}}</td>
               </tr>
               <tr>
-                <td>Customer Firstname</td>
+                <td>Kunde fornavn</td>
                 <td style="text-align: center">{{order.customer.firstName}}</td>
               </tr>
               <tr>
-                <td>Customer Lastname</td>
+                <td>Kunde evternavn</td>
                 <td style="text-align: center">{{order.customer.lastName}}</td>
               </tr>
               <tr>
-                <td>Order Date</td>
+                <td>Ordre dato</td>
                 <td style="text-align: center">{{order.orderDate}}</td>
               </tr>
               <tr >
-                <td>Orderlines</td>
+                <td>Produkter</td>
                 <td></td>
               </tr>
               <tr *ngFor="let orderline of order.orderLines">
