@@ -40,8 +40,7 @@ export class DroneService {
   }
 
   getDroneById(id: number): Observable<Drone> {
-    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.tokenServive.getToken());
-    return this.http.get<Drone>(environment.apiUrl + 'drones/' + id, httpOptions);
+    return this.http.get<Drone>(environment.apiUrl + 'drones/' + id);
   }
 
   updateDrones(drone: Drone): Observable<Drone> {
