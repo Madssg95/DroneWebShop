@@ -50,7 +50,7 @@ export class SignUpComponent implements OnInit {
     let newCustomer = {
       firstName: newFormFields.firstName,
       lastName: newFormFields.lastName,
-      address: newFormFields.address.concat(newFormFields.postalCode.toString()).concat(newFormFields.city),
+      address: newFormFields.address.concat(', ').concat(newFormFields.postalCode.toString()).concat(' ').concat(newFormFields.city),
       phoneNumber: newFormFields.phoneNumber,
       email: newFormFields.email,
       user: null,
